@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="128x128" href="./fath-logo-white.png">
+
+    <title>فَذ - Coming Soon</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Playfair+Display:wght@400;700;900&family=Cairo:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Playfair+Display:wght@400;700;900&family=Tajawal:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Cairo', 'Amiri', serif;
+            background: linear-gradient(135deg, #0a0a1a 0%, #1a1a3a 25%, #2d1b69 50%, #4a1b8a 75%, #0a0a1a 100%);
+            min-height: 100vh;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 2rem;
+            animation: fadeInUp 1s ease-out 2.5s both;
+        }
+
+        .social-link {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.1);
+            color: #ffffff;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .social-link:hover {
+            background: var(--primary-color);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(138, 110, 255, 0.3);
+        }
+
+        /* Enhanced animated background particles */
+        .particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .particle {
+            position: absolute;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.1) 70%, transparent 100%);
+            border-radius: 50%;
+            animation: float 25s infinite linear;
+            filter: blur(0.5px);
+        }
+
+        .particle:nth-child(1) {
+            width: 6px;
+            height: 6px;
+            left: 10%;
+            animation-delay: 0s;
+            animation-duration: 30s;
+        }
+
+        .particle:nth-child(2) {
+            width: 8px;
+            height: 8px;
+            left: 20%;
+            animation-delay: 2s;
+            animation-duration: 35s;
+        }
+
+        .particle:nth-child(3) {
+            width: 4px;
+            height: 4px;
+            left: 30%;
+            animation-delay: 4s;
+            animation-duration: 28s;
+        }
+
+        .particle:nth-child(4) {
+            width: 10px;
+            height: 10px;
+            left: 40%;
+            animation-delay: 6s;
+            animation-duration: 40s;
+        }
+
+        .particle:nth-child(5) {
+            width: 6px;
+            height: 6px;
+            left: 50%;
+            animation-delay: 8s;
+            animation-duration: 32s;
+        }
+
+        .particle:nth-child(6) {
+            width: 5px;
+            height: 5px;
+            left: 60%;
+            animation-delay: 10s;
+            animation-duration: 38s;
+        }
+
+        .particle:nth-child(7) {
+            width: 9px;
+            height: 9px;
+            left: 70%;
+            animation-delay: 12s;
+            animation-duration: 45s;
+        }
+
+        .particle:nth-child(8) {
+            width: 4px;
+            height: 4px;
+            left: 80%;
+            animation-delay: 14s;
+            animation-duration: 26s;
+        }
+
+        .particle:nth-child(9) {
+            width: 7px;
+            height: 7px;
+            left: 90%;
+            animation-delay: 16s;
+            animation-duration: 42s;
+        }
+
+        /* Add more particles for richness */
+        .particle:nth-child(10) {
+            width: 3px;
+            height: 3px;
+            left: 15%;
+            animation-delay: 18s;
+            animation-duration: 33s;
+        }
+
+        .particle:nth-child(11) {
+            width: 5px;
+            height: 5px;
+            left: 25%;
+            animation-delay: 20s;
+            animation-duration: 37s;
+        }
+
+        .particle:nth-child(12) {
+            width: 6px;
+            height: 6px;
+            left: 35%;
+            animation-delay: 22s;
+            animation-duration: 29s;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(100vh) rotate(0deg) scale(0.8);
+                opacity: 0;
+            }
+
+            10% {
+                opacity: 1;
+                transform: translateY(90vh) rotate(36deg) scale(1);
+            }
+
+            90% {
+                opacity: 1;
+                transform: translateY(10vh) rotate(324deg) scale(1);
+            }
+
+            100% {
+                transform: translateY(-100vh) rotate(360deg) scale(0.8);
+                opacity: 0;
+            }
+        }
+
+        /* Add floating geometric shapes */
+        .geometric-shapes {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .shape {
+            position: absolute;
+            opacity: 0.1;
+            animation: shapeFloat 40s infinite linear;
+        }
+
+        .shape.triangle {
+            width: 0;
+            height: 0;
+            border-left: 20px solid transparent;
+            border-right: 20px solid transparent;
+            border-bottom: 35px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .shape.circle {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .shape.square {
+            width: 25px;
+            height: 25px;
+            background: rgba(255, 255, 255, 0.1);
+            transform: rotate(45deg);
+        }
+
+        .shape:nth-child(1) {
+            top: 20%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .shape:nth-child(2) {
+            top: 60%;
+            left: 80%;
+            animation-delay: 10s;
+        }
+
+        .shape:nth-child(3) {
+            top: 80%;
+            left: 20%;
+            animation-delay: 20s;
+        }
+
+        .shape:nth-child(4) {
+            top: 30%;
+            left: 70%;
+            animation-delay: 30s;
+        }
+
+        @keyframes shapeFloat {
+            0% {
+                transform: translateY(0) rotate(0deg) scale(1);
+                opacity: 0.1;
+            }
+
+            50% {
+                opacity: 0.3;
+                transform: translateY(-20px) rotate(180deg) scale(1.2);
+            }
+
+            100% {
+                transform: translateY(0) rotate(360deg) scale(1);
+                opacity: 0.1;
+            }
+        }
+
+        .container {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .logo-container {
+            margin-bottom: 4rem;
+            animation: logoGlow 4s ease-in-out infinite alternate;
+            position: relative;
+        }
+
+        .logo {
+            width: 220px;
+            height: 220px;
+            background-image: url("./fath-logo-white.png");
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            font-weight: bold;
+            color: #ffffff;
+            box-shadow:
+                0 0 40px rgba(255, 255, 255, 0.4),
+                0 0 80px rgba(255, 255, 255, 0.3),
+                0 0 120px rgba(255, 255, 255, 0.2),
+                inset 0 0 30px rgba(255, 255, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+            box-shadow:
+                0 0 60px rgba(255, 255, 255, 0.6),
+                0 0 100px rgba(255, 255, 255, 0.4),
+                0 0 140px rgba(255, 255, 255, 0.3),
+                inset 0 0 40px rgba(255, 255, 255, 0.2);
+        }
+
+        .logo::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            animation: shine 6s infinite;
+        }
+
+        .logo::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 50%;
+            background: conic-gradient(from 0deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            animation: rotate 10s linear infinite;
+        }
+
+        @keyframes logoGlow {
+            0% {
+                filter: drop-shadow(0 0 30px rgba(255, 255, 255, 0.6));
+            }
+
+            100% {
+                filter: drop-shadow(0 0 60px rgba(255, 255, 255, 1));
+            }
+        }
+
+        @keyframes shine {
+            0% {
+                transform: translateX(-100%) translateY(-100%) rotate(45deg);
+            }
+
+            100% {
+                transform: translateX(100%) translateY(100%) rotate(45deg);
+            }
+        }
+
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .main-text {
+            font-size: 5rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 2.5rem;
+            text-shadow:
+                0 0 20px rgba(255, 255, 255, 0.6),
+                0 0 40px rgba(255, 255, 255, 0.4),
+                0 0 60px rgba(255, 255, 255, 0.3);
+            background: linear-gradient(45deg, #ffffff, #f0f0f0, #e0e0e0, #ffffff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: textPulse 3s ease-in-out infinite alternate;
+            font-family: 'Cairo', 'Amiri', serif;
+            letter-spacing: 0.15em;
+            position: relative;
+        }
+
+
+
+        @keyframes textPulse {
+            0% {
+                transform: scale(1);
+                filter: brightness(1);
+            }
+
+            100% {
+                transform: scale(1.08);
+                filter: brightness(1.3);
+            }
+        }
+
+        @keyframes textGlow {
+            0% {
+                opacity: 0.3;
+                transform: scale(1);
+            }
+
+            100% {
+                opacity: 0.6;
+                transform: scale(1.1);
+            }
+        }
+
+        .subtitle {
+            font-size: 1.8rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 3.5rem;
+            font-family: 'Cairo', 'Playfair Display', serif;
+            font-weight: 400;
+            letter-spacing: 0.08em;
+            animation: fadeInUp 1.5s ease-out 0.5s both;
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+        }
+
+        .coming-soon {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 3rem;
+            font-family: 'Cairo', 'Playfair Display', serif;
+            text-transform: uppercase;
+            letter-spacing: 0.25em;
+            animation: fadeInUp 1.5s ease-out 1s both;
+            position: relative;
+            text-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+        }
+
+        .coming-soon::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #ffffff, transparent);
+            animation: lineGlow 3s ease-in-out infinite alternate;
+            border-radius: 2px;
+        }
+
+        .coming-soon::before {
+            content: '';
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5), transparent);
+            animation: lineGlow 3s ease-in-out infinite alternate-reverse;
+        }
+
+        @keyframes lineGlow {
+            0% {
+                box-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+            }
+
+            100% {
+                box-shadow: 0 0 30px rgba(255, 255, 255, 1);
+            }
+        }
+
+        .countdown {
+            display: flex;
+            gap: 2.5rem;
+            margin-bottom: 4rem;
+            animation: fadeInUp 1.5s ease-out 1.5s both;
+        }
+
+        .countdown-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.15);
+            padding: 2rem;
+            border-radius: 20px;
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow:
+                0 15px 40px rgba(0, 0, 0, 0.4),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2);
+            min-width: 120px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .countdown-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .countdown-item:hover::before {
+            left: 100%;
+        }
+
+        .countdown-item:hover {
+            transform: translateY(-5px);
+            box-shadow:
+                0 25px 60px rgba(0, 0, 0, 0.5),
+                inset 0 1px 0 rgba(255, 255, 255, 0.3);
+            border-color: rgba(255, 255, 255, 0.5);
+        }
+
+        .countdown-number {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #ffffff;
+            font-family: 'Cairo', 'Playfair Display', serif;
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+            margin-bottom: 0.5rem;
+        }
+
+        .countdown-label {
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.8);
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            font-family: 'Cairo', 'Playfair Display', serif;
+            font-weight: 600;
+        }
+
+        .notify-form {
+            display: flex;
+            gap: 1.5rem;
+            max-width: 500px;
+            width: 100%;
+            animation: fadeInUp 1.5s ease-out 2s both;
+        }
+
+        .email-input {
+            flex: 1;
+            padding: 1.2rem 1.5rem;
+            border: none;
+            border-radius: 50px;
+            background: rgba(255, 255, 255, 0.15);
+            color: #ffffff;
+            font-size: 1.1rem;
+            backdrop-filter: blur(15px);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            outline: none;
+            transition: all 0.3s ease;
+            font-family: 'Cairo', serif;
+        }
+
+        .email-input::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .email-input:focus {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.6);
+            box-shadow:
+                0 0 30px rgba(255, 255, 255, 0.3),
+                inset 0 0 10px rgba(255, 255, 255, 0.1);
+            transform: scale(1.02);
+        }
+
+        .notify-btn {
+            padding: 1.2rem 2.5rem;
+            background: linear-gradient(135deg, #ffffff 0%, #f0f0f0 50%, #e0e0e0 100%);
+            color: #2d1b69;
+            border: none;
+            border-radius: 50px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Cairo', serif;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-size: 1.1rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .notify-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .notify-btn:hover::before {
+            left: 100%;
+        }
+
+        .notify-btn:hover {
+            transform: translateY(-3px);
+            box-shadow:
+                0 15px 40px rgba(255, 255, 255, 0.4),
+                0 0 20px rgba(255, 255, 255, 0.2);
+        }
+
+        .notify-btn:active {
+            transform: translateY(-1px);
+        }
+
+        /* Add floating orbs */
+        .floating-orbs {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .orb {
+            position: absolute;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+            animation: orbFloat 20s infinite ease-in-out;
+        }
+
+        .orb:nth-child(1) {
+            width: 100px;
+            height: 100px;
+            top: 20%;
+            left: 5%;
+            animation-delay: 0s;
+        }
+
+        .orb:nth-child(2) {
+            width: 60px;
+            height: 60px;
+            top: 70%;
+            right: 10%;
+            animation-delay: 5s;
+        }
+
+        .orb:nth-child(3) {
+            width: 80px;
+            height: 80px;
+            bottom: 20%;
+            left: 15%;
+            animation-delay: 10s;
+        }
+
+        @keyframes orbFloat {
+
+            0%,
+            100% {
+                transform: translateY(0) scale(1);
+                opacity: 0.3;
+            }
+
+            50% {
+                transform: translateY(-30px) scale(1.1);
+                opacity: 0.6;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Enhanced Responsive Design */
+        @media (max-width: 768px) {
+            .main-text {
+                font-size: 3.5rem;
+            }
+
+            .logo {
+                width: 120px;
+                height: 120px;
+            }
+
+            .countdown {
+                gap: 1.5rem;
+            }
+
+            .countdown-item {
+                padding: 1.5rem;
+                min-width: 90px;
+            }
+
+            .countdown-number {
+                font-size: 2.5rem;
+            }
+
+            .notify-form {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .subtitle {
+                font-size: 1.5rem;
+            }
+
+            .coming-soon {
+                font-size: 1.8rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .main-text {
+                font-size: 2.8rem;
+            }
+
+            .coming-soon {
+                font-size: 1.5rem;
+            }
+
+            .subtitle {
+                font-size: 1.3rem;
+            }
+
+            .countdown {
+                gap: 1rem;
+            }
+
+            .countdown-item {
+                padding: 1rem;
+                min-width: 70px;
+            }
+
+            .countdown-number {
+                font-size: 2rem;
+            }
+        }
+
+        /* Add smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Add selection styling */
+        ::selection {
+            background: rgba(255, 255, 255, 0.3);
+            color: #ffffff;
+        }
+
+        ::-moz-selection {
+            background: rgba(255, 255, 255, 0.3);
+            color: #ffffff;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="particles">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+    </div>
+
+    <div class="geometric-shapes">
+        <div class="shape triangle"></div>
+        <div class="shape circle"></div>
+        <div class="shape square"></div>
+        <div class="shape triangle"></div>
+    </div>
+
+    <div class="floating-orbs">
+        <div class="orb"></div>
+        <div class="orb"></div>
+        <div class="orb"></div>
+    </div>
+
+    <div class="container">
+        <div class="logo-container">
+            <div class="logo">
+                <!-- Logo image will be displayed as background -->
+            </div>
+        </div>
+
+        <h1 class="main-text">فَذ</h1>
+
+        <p class="subtitle">شيء استثنائي قادم</p>
+
+        <h2 class="coming-soon">Coming Soon</h2>
+
+        <div class="social-links">
+            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+        </div>
+
+
+    </div>
+
+</body>
+
+</html>
