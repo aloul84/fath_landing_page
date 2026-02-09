@@ -776,6 +776,42 @@
             background: rgba(255, 255, 255, 0.3);
             color: #ffffff;
         }
+        .contest-btn {
+            display: inline-block;
+            margin-bottom: 2rem;
+            padding: 1.2rem 3rem;
+            background: linear-gradient(45deg, #ffd700, #ff8c00); /* لون ذهبي رمضاني */
+            color: #1a1a3a;
+            text-decoration: none;
+            border-radius: 50px;
+            font-family: 'Cairo', sans-serif;
+            font-weight: 700;
+            font-size: 1.4rem;
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.4);
+            transition: all 0.3s ease;
+            animation: fadeInUp 1.5s ease-out 1.8s both, pulseGold 2s infinite alternate;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            z-index: 10;
+        }
+
+        .contest-btn:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 0 35px rgba(255, 215, 0, 0.7);
+            color: #000;
+        }
+
+        @keyframes pulseGold {
+            0% { box-shadow: 0 0 20px rgba(255, 215, 0, 0.4); }
+            100% { box-shadow: 0 0 40px rgba(255, 215, 0, 0.8); }
+        }
+
+        /* تعديل للموبايل */
+        @media (max-width: 480px) {
+            .contest-btn {
+                font-size: 1.1rem;
+                padding: 1rem 2rem;
+            }
+        }
     </style>
 </head>
 
@@ -808,11 +844,10 @@
         <div class="orb"></div>
     </div>
 
-    <div class="container">
+ <div class="container">
         <div class="logo-container">
             <div class="logo">
-                <!-- Logo image will be displayed as background -->
-            </div>
+                </div>
         </div>
 
         <h1 class="main-text">فَذ</h1>
@@ -821,14 +856,17 @@
 
         <h2 class="coming-soon">Coming Soon</h2>
 
+        <a href="https://register.fath-app.com/" class="contest-btn">
+            <i class="fas fa-moon" style="margin-left: 10px;"></i>
+            التسجيل في المسابقة الرمضانية
+        </a>
+
         <div class="social-links">
             <a href="#" class="social-link" style="display: none;"><i class="fab fa-twitter"></i></a>
             <a href="https://www.instagram.com/thefathapp/" class="social-link"><i class="fab fa-instagram"></i></a>
             <a href="#" class="social-link" style="display: none;"><i class="fab fa-linkedin"></i></a>
             <a href="https://www.facebook.com/thefathapp" class="social-link"><i class="fab fa-facebook-f"></i></a>
         </div>
-
-
     </div>
 
 </body>
