@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title data-i18n="parents.meta_title">Fath Parents: Smart Screen Time & Motivation</title>
+  <meta name="description" data-i18n="parents.meta_desc" content="Parental controls and screen time management app for Fath Play: set play limits, link gaming to learning, and monitor progress." />
+  <link rel="icon" href="assets/fath-logo-white.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <script src="assets/i18n.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="assets/tw-config.js"></script>
+  <link rel="stylesheet" href="assets/site.css" />
+</head>
+<body data-page="parents" class="bg-white text-slate-600 antialiased selection:bg-[#CCFBF1] selection:text-[#0F766E]">
+  <div id="site-header"></div>
+
+  <!-- ===== HERO ===== -->
+  <section class="relative overflow-hidden border-b border-[#E2E8F0] bg-gradient-to-b from-[#F8FAFC] to-white pb-20 pt-12 sm:pt-16">
+    <div class="bg-subtle-grid absolute inset-0 pointer-events-none"></div>
+
+    <div class="relative mx-auto grid max-w-7xl items-center gap-12 px-4 sm:px-6 lg:grid-cols-2">
+      <div class="reveal">
+        <nav class="flex items-center gap-2 text-xs font-semibold text-slate-400">
+          <a href="play.html" class="hover:text-[#159A85] transition" data-i18n="parents.nav_play">Fath Play</a>
+          <span>/</span>
+          <span class="text-[#0F172A]" data-i18n="parents.breadcrumb">Family App</span>
+        </nav>
+
+        <span class="chip chip-teal mt-6" data-i18n="parents.chip">Fath Parents: Companion App</span>
+
+        <h1 class="mt-6 font-display text-4xl font-bold leading-tight text-[#0F172A] sm:text-5xl lg:text-6xl" data-i18n-html="parents.hero_title">
+          You set the limits,<br />
+          <span class="text-gradient-teal">and your child moves and learns.</span>
+        </h1>
+
+        <p class="mt-6 max-w-xl text-lg leading-relaxed text-slate-600" data-i18n="parents.hero_desc">
+          A mobile app (iOS & Android) paired with your home Fath Console. Gives you practical control over allowed playtimes, restricts specific games, and locks entertainment minutes behind educational achievements.
+        </p>
+
+        <div class="mt-8 flex flex-wrap gap-3">
+          <span class="chip chip-neutral text-xs py-2 px-3.5 flex items-center gap-2">
+            <svg class="h-4 w-4 text-slate-500" fill="currentColor" viewBox="0 0 24 24"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.37c.62-.75 1.04-1.8 0.92-2.85-.9.04-1.99.6-2.64 1.35-.58.67-.99 1.74-.88 2.76 1 .08 2-.51 2.6-1.26z"/></svg>
+            <span data-i18n="parents.store_ios">App Store (Coming Soon)</span>
+          </span>
+          <span class="chip chip-neutral text-xs py-2 px-3.5 flex items-center gap-2">
+            <svg class="h-4 w-4 text-slate-500" fill="currentColor" viewBox="0 0 24 24"><path d="M3.609 1.814L13.792 12 3.61 22.186a1.5 1.5 0 01-.61-.958V2.772c0-.39.227-.75.609-.958zm11.597 11.599l2.428 2.428-11.8 6.786 9.372-9.214zm0-2.826L5.834 1.373l11.8 6.786-2.428 2.428zm1.414 1.413l3.633 2.091a1.2 1.2 0 010 2.083l-3.633 2.091-2.428-2.428 2.428-2.428z"/></svg>
+            <span data-i18n="parents.store_android">Google Play (Coming Soon)</span>
+          </span>
+        </div>
+      </div>
+
+      <!-- Smartphone Mockup -->
+      <div class="reveal mx-auto w-full max-w-xs">
+        <div class="rounded-[2.5rem] border-[8px] border-[#192A45] bg-white p-4 shadow-2xl level-3">
+          <div class="mx-auto mb-4 h-1.5 w-16 rounded-full bg-slate-300"></div>
+
+          <div class="flex items-center justify-between pb-3 border-b border-[#E2E8F0]">
+            <div>
+              <p class="text-[11px] text-slate-400" data-i18n="parents.mock_family">Family Account</p>
+              <p class="font-display font-bold text-sm text-[#0F172A]" data-i18n="parents.mock_title">Parental Control Dashboard</p>
+            </div>
+            <span class="chip chip-teal text-[10px] py-0 px-2" data-i18n="parents.mock_kids">3 Children</span>
+          </div>
+
+          <div class="mt-4 space-y-3">
+            <!-- Child 1 -->
+            <div class="rounded-xl border border-[#CCFBF1] bg-[#F0FDF9] p-3 shadow-2xs">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-bold text-[#0F172A]" data-i18n="parents.mock_c1_name">Ahmed (9 years)</span>
+                <span class="chip chip-teal text-[10px] py-0 px-1.5" data-i18n="parents.mock_c1_status">Currently Active</span>
+              </div>
+              <div class="mt-2.5 h-2 rounded-full bg-slate-200 overflow-hidden">
+                <div class="h-2 rounded-full bg-[#159A85]" style="width: 60%;"></div>
+              </div>
+              <p class="mt-1 text-[11px] text-slate-500" data-i18n="parents.mock_c1_sub">36 minutes used of 60 allowed minutes</p>
+            </div>
+
+            <!-- Child 2 -->
+            <div class="rounded-xl border border-[#FDE68A] bg-[#FFFBEB] p-3 shadow-2xs">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-bold text-[#0F172A]" data-i18n="parents.mock_c2_name">Sarah (7 years)</span>
+                <span class="chip chip-gold text-[10px] py-0 px-1.5" data-i18n="parents.mock_c2_status">Learning Goal</span>
+              </div>
+              <div class="mt-2.5 h-2 rounded-full bg-slate-200 overflow-hidden">
+                <div class="h-2 rounded-full bg-[#D97706]" style="width: 80%;"></div>
+              </div>
+              <p class="mt-1 text-[11px] text-slate-500" data-i18n="parents.mock_c2_sub">Completed 24 of 30 required learning minutes</p>
+            </div>
+
+            <!-- Child 3 -->
+            <div class="rounded-xl border border-[#E2E8F0] bg-[#F8FAFC] p-3 shadow-2xs">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-bold text-[#0F172A]" data-i18n="parents.mock_c3_name">Omar (5 years)</span>
+                <span class="text-[10px] font-semibold text-slate-400" data-i18n="parents.mock_c3_status">Rest Time</span>
+              </div>
+              <p class="mt-2 text-[11px] text-slate-500" data-i18n="parents.mock_c3_sub">Next play window opens at 5:00 PM</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FEATURES ===== -->
+  <section class="py-20 bg-white">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6">
+      <div class="reveal text-center">
+        <span class="chip chip-neutral" data-i18n="parents.feat_chip">Parental Tools</span>
+        <h2 class="mt-3 font-display text-3xl font-bold text-[#0F172A] sm:text-4xl" data-i18n="parents.feat_title">Features Tailored for Families</h2>
+      </div>
+
+      <div class="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div class="reveal card p-7 border-slate-200">
+          <div class="grid h-10 w-10 place-items-center rounded-lg bg-[#F0FDF9] text-[#159A85]">
+            <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+          </div>
+          <h3 class="mt-4 font-display font-bold text-[#0F172A] text-lg" data-i18n="parents.f1_title">Individual Profiles per Child</h3>
+          <p class="mt-2 text-xs leading-relaxed text-slate-500" data-i18n="parents.f1_desc">Independent profile for each child on the Fath Console, with separate game history and age-appropriate time limits.</p>
+        </div>
+
+        <div class="reveal card p-7 border-slate-200">
+          <div class="grid h-10 w-10 place-items-center rounded-lg bg-[#F0FDF9] text-[#159A85]">
+            <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"/></svg>
+          </div>
+          <h3 class="mt-4 font-display font-bold text-[#0F172A] text-lg" data-i18n="parents.f2_title">App Locking and Game Selection</h3>
+          <p class="mt-2 text-xs leading-relaxed text-slate-500" data-i18n="parents.f2_desc">Show or restrict any game for a specific child with one tap without altering console settings.</p>
+        </div>
+
+        <div class="reveal card p-7 border-slate-200">
+          <div class="grid h-10 w-10 place-items-center rounded-lg bg-[#F0FDF9] text-[#159A85]">
+            <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <h3 class="mt-4 font-display font-bold text-[#0F172A] text-lg" data-i18n="parents.f3_title">Screen Time Scheduling</h3>
+          <p class="mt-2 text-xs leading-relaxed text-slate-500" data-i18n="parents.f3_desc">Set allowed play hours on weekdays and weekends with mandatory rest intervals.</p>
+        </div>
+
+        <div class="reveal card p-7 border-slate-200">
+          <div class="grid h-10 w-10 place-items-center rounded-lg bg-[#F0FDF9] text-[#159A85]">
+            <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+          </div>
+          <h3 class="mt-4 font-display font-bold text-[#0F172A] text-lg" data-i18n="parents.f4_title">Active and Educational Progress Reports</h3>
+          <p class="mt-2 text-xs leading-relaxed text-slate-500" data-i18n="parents.f4_desc">Track games played and active minutes calculated without collecting any visual recordings whatsoever.</p>
+        </div>
+
+        <div class="reveal card p-7 border-slate-200">
+          <div class="grid h-10 w-10 place-items-center rounded-lg bg-[#F0FDF9] text-[#159A85]">
+            <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"/></svg>
+          </div>
+          <h3 class="mt-4 font-display font-bold text-[#0F172A] text-lg" data-i18n="parents.f5_title">Incentive Reward System</h3>
+          <p class="mt-2 text-xs leading-relaxed text-slate-500" data-i18n="parents.f5_desc">Grant additional play minutes or avatar customization gear when specific learning exercises are completed.</p>
+        </div>
+
+        <div class="reveal card p-7 border-slate-200">
+          <div class="grid h-10 w-10 place-items-center rounded-lg bg-[#F0FDF9] text-[#159A85]">
+            <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+          </div>
+          <h3 class="mt-4 font-display font-bold text-[#0F172A] text-lg" data-i18n="parents.f6_title">Purchase Approval</h3>
+          <p class="mt-2 text-xs leading-relaxed text-slate-500" data-i18n="parents.f6_desc">No new games can be bought or downloaded from the store without explicit parental approval sent to your phone.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== INCENTIVE RULE BUILDER ===== -->
+  <section class="py-20 bg-[#F8FAFC] border-y border-[#E2E8F0]">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6">
+      <div class="reveal card card-accent-strip grid items-center gap-10 p-8 sm:p-12 lg:grid-cols-2">
+        <div>
+          <span class="chip chip-teal" data-i18n="parents.rule_chip">Incentive Mechanism</span>
+          <h2 class="mt-4 font-display text-3xl font-bold text-[#0F172A]" data-i18n="parents.rule_title">Link Entertainment to Learning Achievements</h2>
+          <p class="mt-4 leading-relaxed text-slate-600" data-i18n="parents.rule_desc">
+            The platform lets you condition free entertainment gameplay on meeting educational targets first. Test the rule simulator here:
+          </p>
+        </div>
+
+        <div class="rounded-2xl border border-[#E2E8F0] bg-white p-6 shadow-sm">
+          <div class="flex items-center justify-between text-xs font-semibold text-slate-600">
+            <span data-i18n="parents.rule_edu_label">Required Educational Playtime:</span>
+            <strong id="eduVal" class="text-base font-bold text-[#159A85]">30 mins</strong>
+          </div>
+          <input id="edu" type="range" min="10" max="60" step="5" value="30" class="mt-2.5 w-full accent-[#159A85] cursor-pointer" />
+
+          <div class="mt-6 flex items-center justify-between text-xs font-semibold text-slate-600">
+            <span data-i18n="parents.rule_fun_label">Subsequent Unlocked Entertainment Playtime:</span>
+            <strong id="funVal" class="text-base font-bold text-[#192A45]">60 mins</strong>
+          </div>
+          <input id="fun" type="range" min="15" max="120" step="15" value="60" class="mt-2.5 w-full accent-[#192A45] cursor-pointer" />
+
+          <div class="mt-6 rounded-xl border border-[#CCFBF1] bg-[#F0FDF9] p-4 text-center text-xs font-semibold text-[#0F766E] leading-relaxed" id="rule"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA FAMILY PLAN ===== -->
+  <section class="py-16 bg-white">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6">
+      <div class="reveal rounded-3xl bg-[#192A45] p-10 text-center text-white sm:p-14 shadow-lg level-2">
+        <h2 class="font-display text-3xl font-bold sm:text-4xl text-white" data-i18n="parents.cta_title">Parent App Features Included in Family Plan</h2>
+        <p class="mx-auto mt-4 max-w-xl text-base text-slate-200" data-i18n="parents.cta_desc">
+          $2/month or $20/year subscription, and all 100 Game Pack titles remain yours forever even if cancelled.
+        </p>
+        <a href="store.html#plans" class="btn btn-primary mt-8 inline-block px-8 py-3.5 text-base font-semibold shadow-md" data-i18n="parents.cta_btn">
+          View Family Plan Details
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <div id="site-footer"></div>
+  <script src="assets/layout.js"></script>
+  <script>
+    const edu = document.getElementById('edu');
+    const fun = document.getElementById('fun');
+    function upd() {
+      const isAr = window.FATH_I18N && window.FATH_I18N.getLang() === 'ar';
+      const unit = isAr ? ' دقيقة' : ' mins';
+      document.getElementById('eduVal').textContent = edu.value + unit;
+      document.getElementById('funVal').textContent = fun.value + unit;
+      if (isAr) {
+        document.getElementById('rule').textContent =
+          'بعد إتمام ' + edu.value + ' دقيقة من الألعاب التعليمية، يُفتح للطفل ' + fun.value + ' دقيقة من ألعاب الترفيه تلقائياً.';
+      } else {
+        document.getElementById('rule').textContent =
+          'After completing ' + edu.value + ' minutes of educational games, ' + fun.value + ' minutes of entertainment play is unlocked automatically.';
+      }
+    }
+    edu.oninput = fun.oninput = upd;
+    upd();
+    window.addEventListener('languageChanged', upd);
+  </script>
+</body>
+</html>
