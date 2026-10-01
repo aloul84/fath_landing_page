@@ -1,0 +1,36 @@
+html { scroll-behavior: smooth; }
+body { background: #05070f; color: #e2e8f0; -webkit-font-smoothing: antialiased; }
+
+/* الشعار الأصلي يحتوي هوامش شفافة كبيرة، لذلك نقصّه بالتكبير */
+.logo-crop { display: inline-block; position: relative; overflow: hidden; flex-shrink: 0; }
+.logo-crop img { position: absolute; width: 180%; max-width: none; height: auto; left: 50%; top: 50%; transform: translate(-50%, -47%); }
+
+.bg-grid {
+  background-image:
+    linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(ellipse at center, #000 30%, transparent 75%);
+}
+.blob { position: absolute; border-radius: 9999px; filter: blur(90px); opacity: .35; pointer-events: none; }
+
+.text-gradient-gold { background: linear-gradient(90deg, #f7dc8f, #e0a91b); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.text-gradient-play { background: linear-gradient(90deg, #22d3ee, #a855f7, #ec4899); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.text-gradient-fath { background: linear-gradient(90deg, #f2c94c, #22d3ee); -webkit-background-clip: text; background-clip: text; color: transparent; }
+
+.card { background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.015)); border: 1px solid rgba(255,255,255,.08); border-radius: 1.5rem; }
+.card-hover { transition: transform .3s, border-color .3s, box-shadow .3s; }
+.card-hover:hover { transform: translateY(-4px); border-color: rgba(255,255,255,.18); box-shadow: 0 20px 50px -20px rgba(0,0,0,.8); }
+
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s ease; }
+.reveal.in { opacity: 1; transform: none; }
+
+@keyframes float { 0%,100% { transform: translateY(0) } 50% { transform: translateY(-14px) } }
+.animate-float { animation: float 6s ease-in-out infinite; }
+@keyframes pulse-ring { 0% { transform: scale(.8); opacity: .7 } 100% { transform: scale(1.6); opacity: 0 } }
+.pulse-ring::before { content: ''; position: absolute; inset: 0; border-radius: inherit; border: 2px solid currentColor; animation: pulse-ring 2s ease-out infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; transition: none; }
+  .animate-float, .pulse-ring::before { animation: none; }
+}
