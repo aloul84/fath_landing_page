@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title data-i18n="hub.meta_title">Fath Hub: Motion Game Developers Portal</title>
+  <meta name="description" data-i18n="hub.meta_desc" content="Documentation and Fath Play SDK for Unity 2D developers: bind body motion to games without writing computer vision algorithms." />
+  <link rel="icon" href="assets/fath-logo-white.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="assets/tw-config.js"></script>
+  <script src="assets/i18n.js"></script>
+  <link rel="stylesheet" href="assets/site.css" />
+</head>
+<body data-page="hub" class="bg-white text-slate-600 antialiased selection:bg-[#CCFBF1] selection:text-[#0F766E]">
+  <div id="site-header"></div>
+
+  <!-- ===== HERO ===== -->
+  <section class="relative overflow-hidden border-b border-[#E2E8F0] bg-gradient-to-b from-[#F8FAFC] to-white pb-20 pt-12 sm:pt-16">
+    <div class="bg-subtle-grid absolute inset-0 pointer-events-none"></div>
+
+    <div class="relative mx-auto grid max-w-7xl items-center gap-12 px-4 sm:px-6 lg:grid-cols-2">
+      <div class="reveal">
+        <nav class="flex items-center gap-2 text-xs font-semibold text-slate-400">
+          <a href="play.html" data-i18n="nav.play" class="hover:text-[#159A85] transition">Fath Play</a>
+          <span>/</span>
+          <span data-i18n="hub.breadcrumb" class="text-[#0F172A]">Developer Portal</span>
+        </nav>
+
+        <span data-i18n="hub.chip" class="chip chip-teal mt-6">Fath Hub: Developer Ecosystem</span>
+
+        <h1 data-i18n-html="hub.hero_title" class="mt-6 font-display text-4xl font-bold leading-tight text-[#0F172A] sm:text-5xl lg:text-6xl">
+          Build motion games in Unity 2D,<br />
+          <span class="text-gradient-teal">and leave camera vision to us.</span>
+        </h1>
+
+        <p data-i18n="hub.hero_desc" class="mt-6 max-w-xl text-lg leading-relaxed text-slate-600">
+          A lightweight SDK that broadcasts player gestures (jumps, hand gestures, body leans) straight into game code via standard event listeners. Build your game naturally and publish to Arab world audiences.
+        </p>
+
+        <div class="mt-8 flex flex-wrap gap-3.5">
+          <a href="#join" class="btn btn-primary px-7 py-3 text-base shadow-sm flex items-center gap-2">
+            <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
+            <span data-i18n="hub.btn_join">Apply for Developer Access</span>
+          </a>
+          <a href="#sdk" data-i18n="hub.btn_api" class="btn btn-outline px-7 py-3 text-base">
+            Motion API Overview
+          </a>
+        </div>
+      </div>
+
+      <!-- Code Window Mockup -->
+      <div class="reveal" dir="ltr">
+        <div class="overflow-hidden rounded-2xl border border-slate-700 bg-[#0E1726] shadow-2xl level-3">
+          <div class="flex items-center justify-between border-b border-slate-800 bg-[#192A45]/50 px-4 py-3">
+            <div class="flex items-center gap-2">
+              <span class="h-3 w-3 rounded-full bg-[#EF4444]"></span>
+              <span class="h-3 w-3 rounded-full bg-[#F59E0B]"></span>
+              <span class="h-3 w-3 rounded-full bg-[#10B981]"></span>
+            </div>
+            <span class="font-mono text-xs text-slate-400">PlayerController.cs</span>
+            <span class="text-[11px] font-semibold text-[#86F6DE]">Unity C#</span>
+          </div>
+          <pre class="overflow-x-auto p-5 text-xs font-mono leading-relaxed text-slate-300" style="font-family:'JetBrains Mono', monospace;"><span class="text-[#38B2AC]">using</span> Fath.Play.SDK;
+<span class="text-[#38B2AC]">using</span> UnityEngine;
+
+<span class="text-[#38B2AC]">public class</span> <span class="text-[#86F6DE]">PlayerController</span> : MonoBehaviour
+{
+    <span class="text-[#38B2AC]">void</span> <span class="text-[#FCD34D]">OnEnable</span>()
+    {
+        <span class="text-slate-400">// Zero CV setup required; SDK dispatches ready motion events</span>
+        MotionAPI.On(Gesture.HandUp,    Jump);
+        MotionAPI.On(Gesture.HandRight, MoveRight);
+        MotionAPI.On(Gesture.HandLeft,  MoveLeft);
+    }
+
+    <span class="text-[#38B2AC]">void</span> <span class="text-[#FCD34D]">Jump</span>() =&gt; body.AddForce(Vector2.up * <span class="text-[#F97316]">8.5f</span>, ForceMode2D.Impulse);
+
+    <span class="text-[#38B2AC]">void</span> <span class="text-[#FCD34D]">OnLevelComplete</span>(<span class="text-[#38B2AC]">int</span> score)
+    {
+        AchievementAPI.Unlock(<span class="text-[#86F6DE]">"FAST_REFLEXES"</span>);
+        FathAnalytics.TrackScore(score);
+    }
+}</pre>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== WHY FATH HUB ===== -->
+  <section class="py-20 bg-white">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6">
+      <div class="reveal text-center">
+        <span data-i18n="hub.why_chip" class="chip chip-neutral">Developer Advantages</span>
+        <h2 data-i18n="hub.why_title" class="mt-3 font-display text-3xl font-bold text-[#0F172A] sm:text-4xl">Why Build for Fath Play?</h2>
+      </div>
+
+      <div class="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div class="reveal card p-6 border-slate-200">
+          <div class="grid h-10 w-10 place-items-center rounded-lg bg-[#F0FDF9] text-[#159A85]">
+            <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
+          </div>
+          <h3 data-i18n="hub.w1_title" class="mt-4 font-display font-bold text-[#0F172A]">Zero Camera Code</h3>
+          <p data-i18n="hub.w1_desc" class="mt-2 text-xs leading-relaxed text-slate-500">
+            The SDK handles joint tracking and computer vision on-device. Your work is purely game mechanics.
+          </p>
+        </div>
+
+        <div class="reveal card p-6 border-slate-200">
+          <div class="grid h-10 w-10 place-items-center rounded-lg bg-[#F0FDF9] text-[#159A85]">
+            <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"/><path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <h3 data-i18n="hub.w2_title" class="mt-4 font-display font-bold text-[#0F172A]">Standard Unity 2D Engine</h3>
+          <p data-i18n="hub.w2_desc" class="mt-2 text-xs leading-relaxed text-slate-500">
+            No proprietary engines or unusual frameworks; code with your standard Unity and C# workflow.
+          </p>
+        </div>
+
+        <div class="reveal card p-6 border-slate-200">
+          <div class="grid h-10 w-10 place-items-center rounded-lg bg-[#F0FDF9] text-[#159A85]">
+            <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <h3 data-i18n="hub.w3_title" class="mt-4 font-display font-bold text-[#0F172A]">Direct Sales Revenue</h3>
+          <p data-i18n="hub.w3_desc" class="mt-2 text-xs leading-relaxed text-slate-500">
+            Fair, transparent revenue share on every sale, with full intellectual property remaining yours.
+          </p>
+        </div>
+
+        <div class="reveal card p-6 border-slate-200">
+          <div class="grid h-10 w-10 place-items-center rounded-lg bg-[#F0FDF9] text-[#159A85]">
+            <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+          </div>
+          <h3 data-i18n="hub.w4_title" class="mt-4 font-display font-bold text-[#0F172A]">Targeted Arab Audience</h3>
+          <p data-i18n="hub.w4_desc" class="mt-2 text-xs leading-relaxed text-slate-500">
+            Direct reach to thousands of families and schools seeking active, meaningful educational Arabic content.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== APIS GRID ===== -->
+  <section id="sdk" class="py-20 bg-[#F8FAFC] border-y border-[#E2E8F0]">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6">
+      <div class="reveal text-center">
+        <span data-i18n="hub.api_chip" class="chip chip-teal">Simple SDK</span>
+        <h2 data-i18n="hub.sdk_arch_title" class="mt-3 font-display text-3xl font-bold text-[#0F172A] sm:text-4xl">Fath Play SDK Architecture</h2>
+        <p data-i18n="hub.sdk_arch_desc" class="mt-2 text-slate-500">Standardized APIs for motion tracking, accounts, and achievements.</p>
+      </div>
+
+      <div id="apis" class="mt-12 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5"></div>
+    </div>
+  </section>
+
+  <!-- ===== REGISTRATION ===== -->
+  <section id="join" class="py-20 bg-white">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6">
+      <div class="grid gap-12 lg:grid-cols-2 items-center">
+        <div class="reveal">
+          <span data-i18n="hub.hack_chip" class="chip chip-gold">Developer Initiative</span>
+          <h2 data-i18n="hub.hack_title" class="mt-4 font-display text-3xl font-bold text-[#0F172A]">Fath Motion Game Hackathon</h2>
+          <p data-i18n="hub.hack_desc" class="mt-4 leading-relaxed text-slate-600">
+            A technical 48-hour sprint designed for indie developers and university students to prototype fresh Arabic motion games, with winning entries published at commercial launch.
+          </p>
+
+          <div class="mt-8 space-y-3">
+            <div class="flex items-center gap-3 text-sm font-semibold text-slate-700">
+              <span class="h-2 w-2 rounded-full bg-[#159A85]"></span>
+              <span data-i18n="hub.hack_aud1">Open to Computer Science and Software Engineering students</span>
+            </div>
+            <div class="flex items-center gap-3 text-sm font-semibold text-slate-700">
+              <span class="h-2 w-2 rounded-full bg-[#159A85]"></span>
+              <span data-i18n="hub.hack_aud2">Independent game studios in the Arab world</span>
+            </div>
+            <div class="flex items-center gap-3 text-sm font-semibold text-slate-700">
+              <span class="h-2 w-2 rounded-full bg-[#159A85]"></span>
+              <span data-i18n="hub.hack_aud3">Developers passionate about computer vision and interactive learning</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Form -->
+        <form id="devForm" class="reveal card p-8 sm:p-10 border-slate-200 shadow-md">
+          <h3 data-i18n="hub.join_title" class="font-display text-2xl font-bold text-[#0F172A]">Developer Program Application</h3>
+          <p data-i18n="hub.join_desc" class="mt-1 text-xs text-slate-400">Register your details to receive early SDK documentation and preview packages.</p>
+
+          <div class="mt-6 space-y-4">
+            <div>
+              <label data-i18n="hub.form_name" class="block text-xs font-semibold text-slate-600 mb-1">Developer or Studio Name *</label>
+              <input required name="name" placeholder="e.g. Horizon Games" class="form-input w-full" />
+            </div>
+
+            <div>
+              <label data-i18n="hub.form_email" class="block text-xs font-semibold text-slate-600 mb-1">Email Address *</label>
+              <input required name="email" type="email" placeholder="dev@example.com" class="form-input w-full" />
+            </div>
+
+            <div>
+              <label data-i18n="hub.form_exp" class="block text-xs font-semibold text-slate-600 mb-1">Unity Engine Experience *</label>
+              <select name="level" class="form-input w-full">
+                <option data-i18n="hub.exp_1">Beginner: General game development background</option>
+                <option selected data-i18n="hub.exp_2">Intermediate: Shipped 2D projects before</option>
+                <option data-i18n="hub.exp_3">Professional / Independent commercial team</option>
+              </select>
+            </div>
+
+            <div>
+              <label data-i18n="hub.form_idea" class="block text-xs font-semibold text-slate-600 mb-1">Proposed Game Concept (Optional)</label>
+              <textarea name="idea" rows="3" data-i18n-ph="hub.form_idea_ph" placeholder="Brief description of game idea and how body motion is utilized..." class="form-input w-full h-auto py-2.5"></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary w-full py-3 text-base font-semibold shadow-sm flex items-center justify-center gap-2">
+              <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/></svg>
+              <span data-i18n="hub.form_submit">Submit Application</span>
+            </button>
+
+            <div id="devMsg" data-i18n="hub.form_success" class="hidden rounded-xl border border-[#CCFBF1] bg-[#F0FDF9] p-4 text-center text-xs font-semibold text-[#0F766E]">
+              Your request has been received. We will contact you with preview documentation shortly.
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <div id="site-footer"></div>
+  <script src="assets/layout.js"></script>
+  <script>
+    const apis = [
+      'Motion API',
+      'Player API',
+      'Game State API',
+      'Profile API',
+      'Achievement API',
+      'Avatar API',
+      'In-App Purchase API',
+      'Local Multiplayer API',
+      'Save Data API',
+      'Arabic Text / RTL'
+    ];
+
+    document.getElementById('apis').innerHTML = apis.map(n => `
+      <div class="card p-5 text-center flex flex-col items-center justify-center border-slate-200">
+        <svg class="h-5 w-5 text-[#159A85]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
+        <p class="mt-3 text-xs font-mono font-bold text-[#0F172A]">${n}</p>
+      </div>`).join('');
+
+    document.getElementById('devForm').addEventListener('submit', e => {
+      e.preventDefault();
+      e.target.reset();
+      document.getElementById('devMsg').classList.remove('hidden');
+    });
+  </script>
+</body>
+</html>

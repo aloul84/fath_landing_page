@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title data-i18n="home.meta_title">FATH: Interactive Motion Gaming & Live Competition Platform</title>
+  <meta name="description" data-i18n="home.meta_desc"
+    content="An ecosystem combining live on-stage academic competitions for students with a home TV console for active camera-tracked gaming." />
+  <link rel="icon" href="assets/fath-logo-white.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="assets/tw-config.js"></script>
+  <script src="assets/i18n.js"></script>
+  <link rel="stylesheet" href="assets/site.css" />
+</head>
+
+<body data-page="home" class="bg-white text-slate-600 antialiased selection:bg-[#CCFBF1] selection:text-[#0F766E]">
+  <div id="site-header"></div>
+
+  <!-- ===== HERO SECTION ===== -->
+  <section
+    class="relative overflow-hidden border-b border-[#E2E8F0] bg-gradient-to-b from-[#F8FAFC] via-white to-white pb-20 pt-12 lg:pb-28 lg:pt-16">
+    <div class="bg-subtle-grid absolute inset-0 pointer-events-none"></div>
+    <div class="blob top-10 right-10 h-96 w-96 bg-[#159A85]/15"></div>
+    <div class="blob bottom-0 left-10 h-80 w-80 bg-[#38B2AC]/10"></div>
+
+    <div class="relative mx-auto grid max-w-7xl items-center gap-12 px-4 sm:px-6 lg:grid-cols-12 lg:gap-8">
+      <div class="reveal lg:col-span-7">
+        <div
+          class="inline-flex items-center gap-2 rounded-full border border-[#CCFBF1] bg-[#F0FDF9] px-3.5 py-1 text-xs font-semibold text-[#0F766E]">
+          <span class="h-2 w-2 rounded-full bg-[#159A85]"></span>
+          <span data-i18n="home.badge">Independent Motion Tech & Academic Competition Ecosystem</span>
+        </div>
+
+        <h1 data-i18n-html="home.hero_title" class="mt-6 font-display text-4xl font-bold leading-tight text-[#0F172A] sm:text-5xl lg:text-6xl">
+          Learning turns into competition,<br />
+          <span class="text-gradient-teal">and your screen moves your body.</span>
+        </h1>
+
+        <p data-i18n="home.hero_desc" class="mt-6 max-w-xl text-lg leading-relaxed text-slate-600">
+          A platform combining live knowledge tournaments where students face off with buzzer stations, and a home TV device that tracks jumps and body movement directly via camera, without handheld controllers.
+        </p>
+
+        <div class="mt-8 flex flex-wrap items-center gap-3.5">
+          <a href="competitions.html" class="btn btn-primary px-6 py-3 text-base shadow-sm">
+            <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+            </svg>
+            <span data-i18n="home.hero_btn_comp">Explore Competitions</span>
+          </a>
+          <a href="play.html" class="btn btn-outline px-6 py-3 text-base">
+            <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+              <path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <span data-i18n="home.hero_btn_play">How Fath Play Works</span>
+          </a>
+        </div>
+
+        <!-- Measurable Indicators -->
+        <dl class="mt-12 grid max-w-lg grid-cols-3 gap-3.5">
+          <div class="card p-4 text-center">
+            <dt data-i18n="home.stat_tracks" class="text-xs font-medium text-slate-400">Knowledge Tracks</dt>
+            <dd class="mt-1 font-display text-2xl font-bold text-[#0F172A]">5</dd>
+          </div>
+          <div class="card p-4 text-center">
+            <dt data-i18n="home.stat_games" class="text-xs font-medium text-slate-400">Games in the Box</dt>
+            <dd class="mt-1 font-display text-2xl font-bold text-[#159A85]">100</dd>
+          </div>
+          <div class="card p-4 text-center">
+            <dt data-i18n="home.stat_data" class="text-xs font-medium text-slate-400">Recorded Data</dt>
+            <dd class="mt-1 font-display text-2xl font-bold text-[#192A45]">0%</dd>
+          </div>
+        </dl>
+      </div>
+
+      <!-- Hero Visual -->
+      <div class="reveal relative lg:col-span-5">
+        <div class="relative mx-auto w-full max-w-md">
+          <div
+            class="absolute -inset-4 rounded-3xl bg-gradient-to-tr from-[#159A85]/20 via-[#38B2AC]/10 to-[#CADAFE]/30 blur-2xl">
+          </div>
+
+          <div class="relative rounded-3xl border border-[#E2E8F0] bg-white p-8 shadow-xl level-2">
+            <div
+              class="aspect-square w-full rounded-2xl bg-gradient-to-br from-[#192A45] to-[#0E1726] p-8 shadow-inner flex items-center justify-center">
+              <span class="logo-crop h-48 w-48"><img src="assets/fath-logo-white.png" alt="FATH logo" /></span>
+            </div>
+
+            <!-- Floating Fact Cards -->
+            <div
+              class="absolute -right-4 -bottom-4 rounded-xl border border-[#E2E8F0] bg-white px-4 py-3 shadow-lg level-2 flex items-center gap-3">
+              <span class="grid h-10 w-10 place-items-center rounded-lg bg-[#F0FDF9] text-[#159A85]">
+                <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                </svg>
+              </span>
+              <div>
+                <div data-i18n="home.float_motion" class="text-xs font-semibold text-slate-400">Motion Tracking</div>
+                <div data-i18n="home.float_motion_sub" class="text-sm font-bold text-[#0F172A]">100% On-device processing</div>
+              </div>
+            </div>
+
+            <div
+              class="absolute -left-4 -top-4 rounded-xl border border-[#E2E8F0] bg-white px-4 py-3 shadow-lg level-2 flex items-center gap-3">
+              <span class="grid h-10 w-10 place-items-center rounded-lg bg-[#FFFBEB] text-[#D97706]">
+                <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                </svg>
+              </span>
+              <div>
+                <div data-i18n="home.float_fair" class="text-xs font-semibold text-slate-400">Live Tournaments</div>
+                <div data-i18n="home.float_fair_sub" class="text-sm font-bold text-[#0F172A]">Fair electronic refereeing</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT / THE CONCEPT ===== -->
+  <section id="about" class="py-20 bg-white">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6">
+      <div class="reveal mx-auto max-w-3xl text-center">
+        <span data-i18n="home.about_chip" class="chip chip-teal">Platform Purpose</span>
+        <h2 data-i18n="home.about_title" class="mt-4 font-display text-3xl font-bold text-[#0F172A] sm:text-4xl">
+          An Ecosystem for Live Competitions and Active Play
+        </h2>
+        <p data-i18n="home.about_desc" class="mt-6 text-lg leading-relaxed text-slate-600">
+          FATH was developed to offer a practical alternative to passive screen time: live academic tournaments with electronic buzzers for students, alongside active home gaming driven by running and jumping in front of the TV.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CORE PRODUCTS ===== -->
+  <section id="projects" class="py-20 bg-[#F8FAFC] border-y border-[#E2E8F0]">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6">
+      <div class="reveal text-center">
+        <span data-i18n="home.products_chip" class="chip chip-neutral">Core Products</span>
+        <h2 data-i18n="home.products_title" class="mt-3 font-display text-3xl font-bold text-[#0F172A] sm:text-4xl">Two Complementary Projects</h2>
+      </div>
+
+      <div class="mt-14 grid gap-8 lg:grid-cols-2">
+        <!-- Competitions Card -->
+        <article class="reveal card card-hover p-8 sm:p-10 flex flex-col justify-between border-slate-200">
+          <div>
+            <div class="flex items-center justify-between">
+              <span data-i18n="home.comp_badge" class="chip chip-gold">Live Interactive Contests</span>
+              <span data-i18n="home.comp_scope" class="text-xs text-slate-400 font-medium">On-stage and Digital</span>
+            </div>
+
+            <div class="mt-6 flex items-center gap-4">
+              <div
+                class="grid h-14 w-14 place-items-center rounded-xl bg-[#FFFBEB] text-[#D97706] border border-[#FDE68A]">
+                <svg class="h-7 w-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                </svg>
+              </div>
+              <div>
+                <h3 data-i18n="home.comp_title" class="font-display text-2xl font-bold text-[#0F172A]">Fath Competitions</h3>
+                <p class="text-sm font-medium text-slate-400">Fath Competitions</p>
+              </div>
+            </div>
+
+            <p data-i18n="home.comp_desc" class="mt-6 leading-relaxed text-slate-600">
+              A school tournament program with specialized electronic response buttons. Two contestants face each other across four rounds that test speed, risk management, and genuine knowledge under time pressure.
+            </p>
+
+            <div class="mt-6 grid grid-cols-2 gap-2.5 text-xs font-semibold text-slate-700">
+              <span class="rounded-lg bg-white border border-[#E2E8F0] px-3.5 py-2.5 flex items-center gap-2">
+                <span class="h-1.5 w-1.5 rounded-full bg-[#159A85]"></span>
+                <span data-i18n="home.comp_r1">Fastest Round (10 seconds)</span>
+              </span>
+              <span class="rounded-lg bg-white border border-[#E2E8F0] px-3.5 py-2.5 flex items-center gap-2">
+                <span class="h-1.5 w-1.5 rounded-full bg-[#159A85]"></span>
+                <span data-i18n="home.comp_r2">Evaluation & Risk Round</span>
+              </span>
+              <span class="rounded-lg bg-white border border-[#E2E8F0] px-3.5 py-2.5 flex items-center gap-2">
+                <span class="h-1.5 w-1.5 rounded-full bg-[#159A85]"></span>
+                <span data-i18n="home.comp_r3">Cumulative Tug-of-War</span>
+              </span>
+              <span class="rounded-lg bg-white border border-[#E2E8F0] px-3.5 py-2.5 flex items-center gap-2">
+                <span class="h-1.5 w-1.5 rounded-full bg-[#159A85]"></span>
+                <span data-i18n="home.comp_r4">Decisive Treasure Round</span>
+              </span>
+            </div>
+          </div>
+
+          <div class="mt-8 pt-6 border-t border-[#E2E8F0] flex items-center justify-between">
+            <a href="competitions.html"
+              class="inline-flex items-center gap-2 font-semibold text-[#159A85] hover:text-[#0F766E] transition">
+              <span data-i18n="home.comp_link">Tournament schedule & rules</span>
+              <svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19 12H5m7 7-7-7 7-7" />
+              </svg>
+            </a>
+            <a href="https://register.fath-app.com/" target="_blank" rel="noopener"
+              data-i18n="home.comp_cta"
+              class="btn btn-primary text-xs py-2 px-4">
+              Register Contestant
+            </a>
+          </div>
+        </article>
+
+        <!-- Play Card -->
+        <article class="reveal card card-hover p-8 sm:p-10 flex flex-col justify-between border-slate-200">
+          <div>
+            <div class="flex items-center justify-between">
+              <span data-i18n="home.play_badge" class="chip chip-teal">Home Hardware & Games</span>
+              <span data-i18n="home.play_scope" class="text-xs text-slate-400 font-medium">Living Room TV</span>
+            </div>
+
+            <div class="mt-6 flex items-center gap-4">
+              <div
+                class="grid h-14 w-14 place-items-center rounded-xl bg-[#F0FDF9] text-[#159A85] border border-[#CCFBF1]">
+                <svg class="h-7 w-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+              </div>
+              <div>
+                <h3 data-i18n="home.play_title" class="font-display text-2xl font-bold text-[#0F172A]">Fath Play</h3>
+                <p class="text-sm font-medium text-slate-400">Fath Play</p>
+              </div>
+            </div>
+
+            <p data-i18n="home.play_desc" class="mt-6 leading-relaxed text-slate-600">
+              A compact Android TV device connected via HDMI with a dedicated motion sensor camera. It captures jumps, arm swings, and body leans to navigate gameplay directly, with no wearables and no gamepads.
+            </p>
+
+            <div class="mt-6 grid grid-cols-2 gap-2.5 text-xs font-semibold text-slate-700">
+              <span class="rounded-lg bg-white border border-[#E2E8F0] px-3.5 py-2.5 flex items-center gap-2">
+                <span class="h-1.5 w-1.5 rounded-full bg-[#159A85]"></span>
+                <span data-i18n="home.play_f1">Dedicated Fath Box ($45)</span>
+              </span>
+              <span class="rounded-lg bg-white border border-[#E2E8F0] px-3.5 py-2.5 flex items-center gap-2">
+                <span class="h-1.5 w-1.5 rounded-full bg-[#159A85]"></span>
+                <span data-i18n="home.play_f2">Permanent ownership, no mandatory sub</span>
+              </span>
+              <span class="rounded-lg bg-white border border-[#E2E8F0] px-3.5 py-2.5 flex items-center gap-2">
+                <span class="h-1.5 w-1.5 rounded-full bg-[#159A85]"></span>
+                <span data-i18n="home.play_f3">Complete offline functionality</span>
+              </span>
+              <span class="rounded-lg bg-white border border-[#E2E8F0] px-3.5 py-2.5 flex items-center gap-2">
+                <span class="h-1.5 w-1.5 rounded-full bg-[#159A85]"></span>
+                <span data-i18n="home.play_f4">Companion app for time management</span>
+              </span>
+            </div>
+          </div>
+
+          <div class="mt-8 pt-6 border-t border-[#E2E8F0] flex items-center justify-between">
+            <a href="play.html"
+              class="inline-flex items-center gap-2 font-semibold text-[#159A85] hover:text-[#0F766E] transition">
+              <span data-i18n="home.play_link">Console specs & game list</span>
+              <svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19 12H5m7 7-7-7 7-7" />
+              </svg>
+            </a>
+            <a href="store.html" data-i18n="home.play_cta" class="btn btn-secondary text-xs py-2 px-4">
+              Order Console
+            </a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PRIVACY & SAFETY ===== -->
+  <section class="py-20 bg-white">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6">
+      <div class="reveal card card-accent-strip p-8 sm:p-12">
+        <div class="max-w-3xl">
+          <span data-i18n="home.privacy_chip" class="chip chip-teal">Safety & Controls</span>
+          <h2 data-i18n="home.privacy_title" class="mt-4 font-display text-3xl font-bold text-[#0F172A]">
+            Protecting Home Privacy with Local Processing
+          </h2>
+          <p data-i18n="home.privacy_desc" class="mt-4 text-base leading-relaxed text-slate-600">
+            Fath Play processes motion coordinates inside the onboard chip directly, without uploading camera footage to cloud servers:
+          </p>
+        </div>
+
+        <div class="mt-10 grid gap-6 sm:grid-cols-3">
+          <div class="rounded-xl bg-[#F8FAFC] border border-[#E2E8F0] p-6">
+            <div class="grid h-11 w-11 place-items-center rounded-lg bg-[#F0FDF9] text-[#159A85]">
+              <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636" />
+              </svg>
+            </div>
+            <h4 data-i18n="home.priv_c1_title" class="mt-4 font-display font-bold text-[#0F172A]">100% Local Processing</h4>
+            <p data-i18n="home.priv_c1_desc" class="mt-2 text-xs leading-relaxed text-slate-500">
+              Camera video is never transmitted to external servers or saved to internal disk; skeletal coordinates are processed in RAM and discarded instantly.
+            </p>
+          </div>
+
+          <div class="rounded-xl bg-[#F8FAFC] border border-[#E2E8F0] p-6">
+            <div class="grid h-11 w-11 place-items-center rounded-lg bg-[#F0FDF9] text-[#159A85]">
+              <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+              </svg>
+            </div>
+            <h4 data-i18n="home.priv_c2_title" class="mt-4 font-display font-bold text-[#0F172A]">Physical Lens Cover</h4>
+            <p data-i18n="home.priv_c2_desc" class="mt-2 text-xs leading-relaxed text-slate-500">
+              A sliding mechanical privacy shutter covers the camera lens when not in use for complete peace of mind.
+            </p>
+          </div>
+
+          <div class="rounded-xl bg-[#F8FAFC] border border-[#E2E8F0] p-6">
+            <div class="grid h-11 w-11 place-items-center rounded-lg bg-[#F0FDF9] text-[#159A85]">
+              <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <h4 data-i18n="home.priv_c3_title" class="mt-4 font-display font-bold text-[#0F172A]">Parental Time Management</h4>
+            <p data-i18n="home.priv_c3_desc" class="mt-2 text-xs leading-relaxed text-slate-500">
+              Set daily screen time limits, lock games with one tap, and require 20 minutes of educational games before unlocking entertainment.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ECOSYSTEM AUDIENCE ===== -->
+  <section class="py-20 bg-[#F8FAFC] border-y border-[#E2E8F0]">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6">
+      <div class="reveal text-center">
+        <span data-i18n="home.eco_chip" class="chip chip-navy">Integrated Ecosystem</span>
+        <h2 data-i18n="home.eco_title" class="mt-3 font-display text-3xl font-bold text-[#0F172A]">A Dedicated Space for Everyone</h2>
+      </div>
+
+      <div class="mt-12 grid gap-6 md:grid-cols-3">
+        <div class="card p-7">
+          <div class="grid h-10 w-10 place-items-center rounded-lg bg-[#F8FAFC] border border-[#E2E8F0] text-[#159A85]">
+            <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+            </svg>
+          </div>
+          <h4 data-i18n="home.aud_fam_title" class="mt-4 font-display font-bold text-[#0F172A] text-lg">For Families & Children</h4>
+          <p data-i18n="home.aud_fam_desc" class="mt-2 text-sm leading-relaxed text-slate-500">Safe hardware and culturally aligned content that gets kids active indoors at an affordable price with lifetime ownership.</p>
+        </div>
+
+        <div class="card p-7">
+          <div class="grid h-10 w-10 place-items-center rounded-lg bg-[#F8FAFC] border border-[#E2E8F0] text-[#159A85]">
+            <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+            </svg>
+          </div>
+          <h4 data-i18n="home.aud_sch_title" class="mt-4 font-display font-bold text-[#0F172A] text-lg">For Schools & Institutions</h4>
+          <p data-i18n="home.aud_sch_desc" class="mt-2 text-sm leading-relaxed text-slate-500">Organize internal tournaments with certified electronic judging that spotlights talented students on a true competitive stage.</p>
+        </div>
+
+        <div class="card p-7">
+          <div class="grid h-10 w-10 place-items-center rounded-lg bg-[#F8FAFC] border border-[#E2E8F0] text-[#159A85]">
+            <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+            </svg>
+          </div>
+          <h4 data-i18n="home.aud_dev_title" class="mt-4 font-display font-bold text-[#0F172A] text-lg">For Game Studios (Fath Hub)</h4>
+          <p data-i18n="home.aud_dev_desc" class="mt-2 text-sm leading-relaxed text-slate-500">A Unity SDK allowing developers to bind bodily movement to gameplay without building computer vision algorithms from scratch.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TIMELINE ===== -->
+  <section class="py-20 bg-white">
+    <div class="mx-auto max-w-4xl px-4 sm:px-6">
+      <div class="reveal text-center">
+        <span data-i18n="home.timeline_chip" class="chip chip-neutral">Rollout Roadmap</span>
+        <h2 data-i18n="home.timeline_title" class="mt-3 font-display text-3xl font-bold text-[#0F172A] sm:text-4xl">Launch & Availability Plan</h2>
+      </div>
+
+      <ol class="relative mt-14 space-y-8 border-l-2 rtl:border-l-0 rtl:border-r-2 border-[#CBD5E1] pl-8 rtl:pl-0 rtl:pr-8">
+        <li class="reveal relative">
+          <span
+            class="absolute -left-[41px] rtl:left-auto rtl:-right-[41px] top-1.5 h-5 w-5 rounded-full border-4 border-white bg-[#159A85] shadow-sm"></span>
+          <span data-i18n="home.step1_chip" class="chip chip-teal text-[11px] py-0.5">Current Phase</span>
+          <h4 data-i18n="home.step1_title" class="mt-2 text-lg font-bold text-[#0F172A]">Live Field Tournaments & Console Pilot</h4>
+          <p data-i18n="home.step1_desc" class="mt-1 text-sm leading-relaxed text-slate-500">Group qualifying rounds commence, with Fath Play hardware rolled out containing the initial 100-game bundle.</p>
+        </li>
+
+        <li class="reveal relative">
+          <span
+            class="absolute -left-[41px] rtl:left-auto rtl:-right-[41px] top-1.5 h-5 w-5 rounded-full border-4 border-white bg-[#192A45] shadow-sm"></span>
+          <span data-i18n="home.step2_chip" class="chip chip-navy text-[11px] py-0.5">Next Phase</span>
+          <h4 data-i18n="home.step2_title" class="mt-2 text-lg font-bold text-[#0F172A]">Parents App & Family Multiplayer Rooms</h4>
+          <p data-i18n="home.step2_desc" class="mt-1 text-sm leading-relaxed text-slate-500">Official release of Fath Parents on app stores, activating remote multiplayer matches between families.</p>
+        </li>
+
+        <li class="reveal relative">
+          <span
+            class="absolute -left-[41px] rtl:left-auto rtl:-right-[41px] top-1.5 h-5 w-5 rounded-full border-4 border-white bg-slate-400 shadow-sm"></span>
+          <span data-i18n="home.step3_chip" class="chip chip-neutral text-[11px] py-0.5">Future Phase</span>
+          <h4 data-i18n="home.step3_title" class="mt-2 text-lg font-bold text-[#0F172A]">Opening Fath Store to Independent Studios</h4>
+          <p data-i18n="home.step3_desc" class="mt-1 text-sm leading-relaxed text-slate-500">Publishing new active and educational games from indie developers and studios via Fath Hub.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ===== CTA SECTION ===== -->
+  <section id="contact" class="py-20 bg-[#F8FAFC] border-t border-[#E2E8F0]">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6">
+      <div
+        class="reveal relative overflow-hidden rounded-3xl bg-[#192A45] p-10 text-center text-white sm:p-16 shadow-xl level-3">
+        <div class="relative">
+          <h2 data-i18n="home.cta_title" class="font-display text-3xl font-bold sm:text-4xl text-white">Want to compete or test the platform?</h2>
+          <p data-i18n="home.cta_desc" class="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-slate-200">
+            Student registration is open for upcoming seasons, and advance orders are available for Fath Play consoles with the full game pack.
+          </p>
+
+          <div class="mt-8 flex flex-wrap justify-center gap-3.5">
+            <a href="https://register.fath-app.com/" target="_blank" rel="noopener"
+              class="btn btn-primary px-7 py-3 font-semibold shadow-md flex items-center gap-2">
+              <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z" />
+              </svg>
+              <span data-i18n="home.cta_reg">Register New Contestant</span>
+            </a>
+            <a href="store.html"
+              class="btn bg-white/10 text-white hover:bg-white/20 px-7 py-3 border border-white/20 flex items-center gap-2">
+              <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+              </svg>
+              <span data-i18n="home.cta_order">Order Fath Play Console</span>
+            </a>
+            <a href="hub.html"
+              class="btn bg-white/10 text-white hover:bg-white/20 px-7 py-3 border border-white/20 flex items-center gap-2">
+              <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+              </svg>
+              <span data-i18n="home.cta_dev">Join as Developer</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="site-footer"></div>
+  <script src="assets/layout.js"></script>
+</body>
+
+</html>
