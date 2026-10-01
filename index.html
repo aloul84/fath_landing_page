@@ -1,700 +1,545 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en" dir="ltr">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" sizes="128x128" href="./fath-logo-white.png">
-
-    <title>فَذ - Coming Soon</title>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Playfair+Display:wght@400;700;900&family=Cairo:wght@300;400;600;700;900&display=swap"
-        rel="stylesheet">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Playfair+Display:wght@400;700;900&family=Tajawal:wght@400;700&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        :root {
-            --primary-color: #4BAC94;
-            --secondary-color: #1F2F53;
-            --gradient-1: linear-gradient(135deg, #1F2F53 0%, #2a4165 25%, #4BAC94 75%, #5bc4a8 100%);
-            --gradient-2: linear-gradient(45deg, #4BAC94, #5bc4a8, #6dd4b8);
-        }
-
-        body {
-            font-family: 'Cairo', 'Amiri', serif;
-            background: #0a0e1a;
-            min-height: 100vh;
-            overflow-x: hidden;
-            position: relative;
-        }
-
-        /* Animated gradient background */
-        .animated-bg {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 0;
-            background: linear-gradient(135deg, #0a0e1a 0%, #1F2F53 25%, #2a4165 50%, #1F2F53 75%, #0a0e1a 100%);
-            background-size: 400% 400%;
-            animation: gradientShift 15s ease infinite;
-        }
-
-        @keyframes gradientShift {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
-        /* Enhanced animated particles */
-        .particles {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            z-index: 1;
-            pointer-events: none;
-        }
-
-        .particle {
-            position: absolute;
-            background: radial-gradient(circle, var(--primary-color) 0%, rgba(75, 172, 148, 0.3) 40%, transparent 70%);
-            border-radius: 50%;
-            animation: floatParticle 25s infinite linear;
-            filter: blur(1px);
-        }
-
-        .particle:nth-child(1) { width: 8px; height: 8px; left: 5%; animation-delay: 0s; animation-duration: 28s; }
-        .particle:nth-child(2) { width: 12px; height: 12px; left: 15%; animation-delay: 3s; animation-duration: 35s; }
-        .particle:nth-child(3) { width: 6px; height: 6px; left: 25%; animation-delay: 6s; animation-duration: 30s; }
-        .particle:nth-child(4) { width: 10px; height: 10px; left: 35%; animation-delay: 9s; animation-duration: 40s; }
-        .particle:nth-child(5) { width: 7px; height: 7px; left: 45%; animation-delay: 12s; animation-duration: 33s; }
-        .particle:nth-child(6) { width: 9px; height: 9px; left: 55%; animation-delay: 15s; animation-duration: 38s; }
-        .particle:nth-child(7) { width: 11px; height: 11px; left: 65%; animation-delay: 18s; animation-duration: 42s; }
-        .particle:nth-child(8) { width: 5px; height: 5px; left: 75%; animation-delay: 21s; animation-duration: 29s; }
-        .particle:nth-child(9) { width: 8px; height: 8px; left: 85%; animation-delay: 24s; animation-duration: 36s; }
-        .particle:nth-child(10) { width: 6px; height: 6px; left: 10%; animation-delay: 27s; animation-duration: 31s; }
-        .particle:nth-child(11) { width: 10px; height: 10px; left: 30%; animation-delay: 30s; animation-duration: 37s; }
-        .particle:nth-child(12) { width: 7px; height: 7px; left: 50%; animation-delay: 33s; animation-duration: 34s; }
-        .particle:nth-child(13) { width: 9px; height: 9px; left: 70%; animation-delay: 36s; animation-duration: 32s; }
-        .particle:nth-child(14) { width: 8px; height: 8px; left: 90%; animation-delay: 39s; animation-duration: 35s; }
-        .particle:nth-child(15) { width: 11px; height: 11px; left: 20%; animation-delay: 42s; animation-duration: 41s; }
-
-        @keyframes floatParticle {
-            0% {
-                transform: translateY(120vh) rotate(0deg) scale(0.5);
-                opacity: 0;
-            }
-            10% {
-                opacity: 0.8;
-            }
-            90% {
-                opacity: 0.8;
-            }
-            100% {
-                transform: translateY(-20vh) rotate(360deg) scale(1.2);
-                opacity: 0;
-            }
-        }
-
-        /* Glowing orbs with movement */
-        .floating-orbs {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 1;
-            pointer-events: none;
-        }
-
-        .orb {
-            position: absolute;
-            border-radius: 50%;
-            filter: blur(60px);
-            animation: orbMove 20s infinite ease-in-out;
-            opacity: 0.4;
-        }
-
-        .orb:nth-child(1) {
-            width: 300px;
-            height: 300px;
-            background: radial-gradient(circle, var(--primary-color), transparent);
-            top: 10%;
-            left: 10%;
-            animation-delay: 0s;
-        }
-
-        .orb:nth-child(2) {
-            width: 250px;
-            height: 250px;
-            background: radial-gradient(circle, #5bc4a8, transparent);
-            top: 60%;
-            right: 15%;
-            animation-delay: 5s;
-        }
-
-        .orb:nth-child(3) {
-            width: 350px;
-            height: 350px;
-            background: radial-gradient(circle, var(--primary-color), transparent);
-            bottom: 10%;
-            left: 20%;
-            animation-delay: 10s;
-        }
-
-        .orb:nth-child(4) {
-            width: 200px;
-            height: 200px;
-            background: radial-gradient(circle, #6dd4b8, transparent);
-            top: 40%;
-            left: 50%;
-            animation-delay: 15s;
-        }
-
-        @keyframes orbMove {
-            0%, 100% {
-                transform: translate(0, 0) scale(1);
-            }
-            25% {
-                transform: translate(50px, -30px) scale(1.1);
-            }
-            50% {
-                transform: translate(-30px, 40px) scale(0.9);
-            }
-            75% {
-                transform: translate(40px, 20px) scale(1.05);
-            }
-        }
-
-        /* Geometric shapes with enhanced animation */
-        .geometric-shapes {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 1;
-            pointer-events: none;
-        }
-
-        .shape {
-            position: absolute;
-            opacity: 0.15;
-            animation: shapeFloat 25s infinite ease-in-out;
-        }
-
-        .shape.triangle {
-            width: 0;
-            height: 0;
-            border-left: 30px solid transparent;
-            border-right: 30px solid transparent;
-            border-bottom: 50px solid var(--primary-color);
-        }
-
-        .shape.circle {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background: var(--primary-color);
-            box-shadow: 0 0 20px var(--primary-color);
-        }
-
-        .shape.square {
-            width: 35px;
-            height: 35px;
-            background: var(--primary-color);
-            transform: rotate(45deg);
-        }
-
-        .shape:nth-child(1) { top: 15%; left: 8%; animation-delay: 0s; }
-        .shape:nth-child(2) { top: 65%; left: 85%; animation-delay: 8s; }
-        .shape:nth-child(3) { top: 80%; left: 15%; animation-delay: 16s; }
-        .shape:nth-child(4) { top: 25%; left: 75%; animation-delay: 24s; }
-        .shape:nth-child(5) { top: 45%; left: 5%; animation-delay: 12s; }
-        .shape:nth-child(6) { top: 55%; right: 10%; animation-delay: 20s; }
-
-        @keyframes shapeFloat {
-            0%, 100% {
-                transform: translateY(0) rotate(0deg) scale(1);
-                opacity: 0.15;
-            }
-            25% {
-                transform: translateY(-40px) rotate(90deg) scale(1.3);
-                opacity: 0.25;
-            }
-            50% {
-                transform: translateY(-20px) rotate(180deg) scale(1.1);
-                opacity: 0.3;
-            }
-            75% {
-                transform: translateY(-50px) rotate(270deg) scale(1.2);
-                opacity: 0.2;
-            }
-        }
-
-        /* Sparkles effect */
-        .sparkles {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 2;
-            pointer-events: none;
-        }
-
-        .sparkle {
-            position: absolute;
-            width: 4px;
-            height: 4px;
-            background: var(--primary-color);
-            border-radius: 50%;
-            animation: sparkleAnim 3s infinite ease-in-out;
-            box-shadow: 0 0 10px var(--primary-color);
-        }
-
-        .sparkle:nth-child(odd) { animation-delay: 0s; }
-        .sparkle:nth-child(even) { animation-delay: 1.5s; }
-
-        @keyframes sparkleAnim {
-            0%, 100% {
-                opacity: 0;
-                transform: scale(0);
-            }
-            50% {
-                opacity: 1;
-                transform: scale(1.5);
-            }
-        }
-
-        .container {
-            position: relative;
-            z-index: 3;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-            padding: 1.5rem;
-            text-align: center;
-        }
-
-        /* Enhanced logo with 3D effect */
-        .logo-container {
-            margin-bottom: 1.5rem;
-            animation: logoFloat 6s ease-in-out infinite;
-            position: relative;
-            filter: drop-shadow(0 0 40px rgba(75, 172, 148, 0.6));
-        }
-
-        .logo {
-            width: 180px;
-            height: 180px;
-            background-image: url("./fath-logo-white.png");
-            background-size: contain;
-            background-repeat: no-repeat;
-            background-position: center;
-            border-radius: 50%;
-            position: relative;
-            overflow: hidden;
-            box-shadow:
-                0 0 60px rgba(75, 172, 148, 0.5),
-                0 0 100px rgba(75, 172, 148, 0.3),
-                inset 0 0 40px rgba(75, 172, 148, 0.2);
-            animation: logoRotate 20s linear infinite, logoPulse 3s ease-in-out infinite;
-        }
-
-        .logo::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: conic-gradient(from 0deg, transparent, var(--primary-color), transparent, var(--primary-color), transparent);
-            animation: logoShine 4s linear infinite;
-            opacity: 0.3;
-        }
-
-        .logo::after {
-            content: '';
-            position: absolute;
-            inset: 5px;
-            border-radius: 50%;
-            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1));
-            animation: logoGleam 6s ease-in-out infinite;
-        }
-
-        @keyframes logoFloat {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-20px); }
-        }
-
-        @keyframes logoRotate {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-
-        @keyframes logoPulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-        }
-
-        @keyframes logoShine {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-
-        @keyframes logoGleam {
-            0%, 100% { opacity: 0.3; }
-            50% { opacity: 0.6; }
-        }
-
-        /* Main text with gradient animation */
-        .main-text {
-            font-size: 4.5rem;
-            font-weight: 900;
-            color: #ffffff;
-            margin-bottom: 1rem;
-            background: linear-gradient(90deg, var(--primary-color), #5bc4a8, #6dd4b8, var(--primary-color));
-            background-size: 200% auto;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            animation: textGradient 3s linear infinite, textFloat 4s ease-in-out infinite;
-            font-family: 'Cairo', 'Amiri', serif;
-            letter-spacing: 0.2em;
-            filter: drop-shadow(0 0 30px rgba(75, 172, 148, 0.7));
-            position: relative;
-        }
-
-        .main-text::before {
-            content: 'فَذ';
-            position: absolute;
-            left: 0;
-            top: 0;
-            z-index: -1;
-            background: linear-gradient(90deg, var(--primary-color), #5bc4a8);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            filter: blur(20px);
-            opacity: 0.5;
-            animation: textGlow 2s ease-in-out infinite;
-        }
-
-        @keyframes textGradient {
-            to { background-position: 200% center; }
-        }
-
-        @keyframes textFloat {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-        }
-
-        @keyframes textGlow {
-            0%, 100% { opacity: 0.5; }
-            50% { opacity: 0.8; }
-        }
-
-        .subtitle {
-            font-size: 1.6rem;
-            color: rgba(255, 255, 255, 0.9);
-            margin-bottom: 1.5rem;
-            font-family: 'Cairo', serif;
-            font-weight: 400;
-            letter-spacing: 0.1em;
-            animation: fadeInUp 1.5s ease-out 0.3s both, subtitleGlow 3s ease-in-out infinite;
-            text-shadow: 0 0 20px rgba(75, 172, 148, 0.5);
-        }
-
-        @keyframes subtitleGlow {
-            0%, 100% { text-shadow: 0 0 20px rgba(75, 172, 148, 0.5); }
-            50% { text-shadow: 0 0 30px rgba(75, 172, 148, 0.8); }
-        }
-
-        .coming-soon {
-            font-size: 2rem;
-            font-weight: 700;
-            color: #ffffff;
-            margin-bottom: 2rem;
-            font-family: 'Cairo', serif;
-            text-transform: uppercase;
-            letter-spacing: 0.3em;
-            animation: fadeInUp 1.5s ease-out 0.6s both;
-            position: relative;
-            padding-bottom: 1rem;
-        }
-
-        .coming-soon::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100px;
-            height: 3px;
-            background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
-            animation: lineExpand 2s ease-in-out infinite;
-            box-shadow: 0 0 10px var(--primary-color);
-        }
-
-        @keyframes lineExpand {
-            0%, 100% { width: 100px; opacity: 0.5; }
-            50% { width: 150px; opacity: 1; }
-        }
-
-        /* Contest button with fancy animation */
-        .contest-btn {
-            display: inline-block;
-            margin-bottom: 2rem;
-            padding: 1rem 2.5rem;
-            background: linear-gradient(135deg, var(--primary-color), #5bc4a8, #6dd4b8);
-            background-size: 200% auto;
-            color: var(--secondary-color);
-            text-decoration: none;
-            border-radius: 50px;
-            font-family: 'Cairo', sans-serif;
-            font-weight: 700;
-            font-size: 1.3rem;
-            box-shadow: 
-                0 0 30px rgba(75, 172, 148, 0.5),
-                0 10px 40px rgba(75, 172, 148, 0.3);
-            transition: all 0.4s ease;
-            animation: fadeInUp 1.5s ease-out 0.9s both, btnPulse 2s infinite alternate;
-            border: 2px solid rgba(255, 255, 255, 0.3);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .contest-btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-            animation: btnShine 3s infinite;
-        }
-
-        .contest-btn:hover {
-            transform: translateY(-8px) scale(1.05);
-            box-shadow: 
-                0 0 50px rgba(75, 172, 148, 0.8),
-                0 20px 60px rgba(75, 172, 148, 0.5);
-            background-position: right center;
-        }
-
-        @keyframes btnPulse {
-            0% { box-shadow: 0 0 30px rgba(75, 172, 148, 0.5), 0 10px 40px rgba(75, 172, 148, 0.3); }
-            100% { box-shadow: 0 0 50px rgba(75, 172, 148, 0.7), 0 15px 50px rgba(75, 172, 148, 0.5); }
-        }
-
-        @keyframes btnShine {
-            0% { left: -100%; }
-            50%, 100% { left: 200%; }
-        }
-
-        /* Social links with hover effects */
-        .social-links {
-            display: flex;
-            gap: 1rem;
-            margin-top: 1rem;
-            animation: fadeInUp 1.5s ease-out 1.2s both;
-        }
-
-        .social-link {
-            width: 55px;
-            height: 55px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: rgba(75, 172, 148, 0.15);
-            color: var(--primary-color);
-            font-size: 1.3rem;
-            transition: all 0.4s ease;
-            backdrop-filter: blur(10px);
-            border: 2px solid rgba(75, 172, 148, 0.3);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .social-link::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            border-radius: 50%;
-            background: var(--gradient-2);
-            opacity: 0;
-            transition: opacity 0.4s ease;
-        }
-
-        .social-link i {
-            position: relative;
-            z-index: 1;
-        }
-
-        .social-link:hover {
-            transform: translateY(-10px) rotate(360deg);
-            box-shadow: 0 10px 30px rgba(75, 172, 148, 0.5);
-            border-color: var(--primary-color);
-        }
-
-        .social-link:hover::before {
-            opacity: 1;
-        }
-
-        .social-link:hover i {
-            color: var(--secondary-color);
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(40px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .main-text { font-size: 3rem; }
-            .logo { width: 140px; height: 140px; }
-            .subtitle { font-size: 1.3rem; }
-            .coming-soon { font-size: 1.6rem; }
-            .contest-btn { font-size: 1.1rem; padding: 0.9rem 2rem; }
-            .social-link { width: 48px; height: 48px; font-size: 1.1rem; }
-        }
-
-        @media (max-width: 480px) {
-            .main-text { font-size: 2.5rem; margin-bottom: 0.8rem; }
-            .logo { width: 120px; height: 120px; }
-            .subtitle { font-size: 1.1rem; margin-bottom: 1.2rem; }
-            .coming-soon { font-size: 1.4rem; margin-bottom: 1.5rem; }
-            .contest-btn { font-size: 1rem; padding: 0.8rem 1.8rem; margin-bottom: 1.5rem; }
-            .social-links { gap: 0.8rem; margin-top: 0.8rem; }
-            .social-link { width: 45px; height: 45px; font-size: 1rem; }
-            .container { padding: 1rem; }
-            .logo-container { margin-bottom: 1.2rem; }
-        }
-
-        /* Smooth scrolling */
-        html {
-            scroll-behavior: smooth;
-        }
-
-        /* Selection styling */
-        ::selection {
-            background: var(--primary-color);
-            color: var(--secondary-color);
-        }
-
-        ::-moz-selection {
-            background: var(--primary-color);
-            color: var(--secondary-color);
-        }
-
-        /* Loading animation for page */
-        @keyframes pageLoad {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        body {
-            animation: pageLoad 1s ease-out;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title data-i18n="home.meta_title">FATH: Interactive Motion Gaming & Live Competition Platform</title>
+  <meta name="description" data-i18n="home.meta_desc"
+    content="An ecosystem combining live on-stage academic competitions for students with a home TV console for active camera-tracked gaming." />
+  <link rel="icon" href="assets/fath-logo-white.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="assets/tw-config.js"></script>
+  <script src="assets/i18n.js"></script>
+  <link rel="stylesheet" href="assets/site.css" />
 </head>
 
-<body>
-    <div class="animated-bg"></div>
+<body data-page="home" class="bg-white text-slate-600 antialiased selection:bg-[#CCFBF1] selection:text-[#0F766E]">
+  <div id="site-header"></div>
 
-    <div class="particles">
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-    </div>
+  <!-- ===== HERO SECTION ===== -->
+  <section
+    class="relative overflow-hidden border-b border-[#E2E8F0] bg-gradient-to-b from-[#F8FAFC] via-white to-white pb-20 pt-12 lg:pb-28 lg:pt-16">
+    <div class="bg-subtle-grid absolute inset-0 pointer-events-none"></div>
+    <div class="blob top-10 right-10 h-96 w-96 bg-[#159A85]/15"></div>
+    <div class="blob bottom-0 left-10 h-80 w-80 bg-[#38B2AC]/10"></div>
 
-    <div class="geometric-shapes">
-        <div class="shape triangle"></div>
-        <div class="shape circle"></div>
-        <div class="shape square"></div>
-        <div class="shape triangle"></div>
-        <div class="shape circle"></div>
-        <div class="shape square"></div>
-    </div>
-
-    <div class="floating-orbs">
-        <div class="orb"></div>
-        <div class="orb"></div>
-        <div class="orb"></div>
-        <div class="orb"></div>
-    </div>
-
-    <div class="sparkles">
-        <div class="sparkle" style="top: 20%; left: 15%;"></div>
-        <div class="sparkle" style="top: 40%; left: 80%;"></div>
-        <div class="sparkle" style="top: 60%; left: 10%;"></div>
-        <div class="sparkle" style="top: 80%; left: 70%;"></div>
-        <div class="sparkle" style="top: 30%; left: 50%;"></div>
-        <div class="sparkle" style="top: 70%; left: 40%;"></div>
-    </div>
-
-    <div class="container">
-        <div class="logo-container">
-            <div class="logo"></div>
+    <div class="relative mx-auto grid max-w-7xl items-center gap-12 px-4 sm:px-6 lg:grid-cols-12 lg:gap-8">
+      <div class="reveal lg:col-span-7">
+        <div
+          class="inline-flex items-center gap-2 rounded-full border border-[#CCFBF1] bg-[#F0FDF9] px-3.5 py-1 text-xs font-semibold text-[#0F766E]">
+          <span class="h-2 w-2 rounded-full bg-[#159A85]"></span>
+          <span data-i18n="home.badge">Independent Motion Tech & Academic Competition Ecosystem</span>
         </div>
 
-        <h1 class="main-text">فَذ</h1>
+        <h1 data-i18n-html="home.hero_title" class="mt-6 font-display text-4xl font-bold leading-tight text-[#0F172A] sm:text-5xl lg:text-6xl">
+          Learning turns into competition,<br />
+          <span class="text-gradient-teal">and your screen moves your body.</span>
+        </h1>
 
-        <p class="subtitle">شيء استثنائي قادم</p>
+        <p data-i18n="home.hero_desc" class="mt-6 max-w-xl text-lg leading-relaxed text-slate-600">
+          A platform combining live knowledge tournaments where students face off with buzzer stations, and a home TV device that tracks jumps and body movement directly via camera, without handheld controllers.
+        </p>
 
-        <h2 class="coming-soon">Coming Soon</h2>
-
-        <a href="https://register.fath-app.com/" class="contest-btn">
-            <i class="fas fa-moon" style="margin-left: 10px;"></i>
-            التسجيل في المسابقة الرمضانية
-        </a>
-
-        <div class="social-links">
-            <a href="https://www.instagram.com/thefathapp/" class="social-link" target="_blank">
-                <i class="fab fa-instagram"></i>
-            </a>
-            <a href="https://www.facebook.com/thefathapp" class="social-link" target="_blank">
-                <i class="fab fa-facebook-f"></i>
-            </a>
+        <div class="mt-8 flex flex-wrap items-center gap-3.5">
+          <a href="competitions.html" class="btn btn-primary px-6 py-3 text-base shadow-sm">
+            <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+            </svg>
+            <span data-i18n="home.hero_btn_comp">Explore Competitions</span>
+          </a>
+          <a href="play.html" class="btn btn-outline px-6 py-3 text-base">
+            <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+              <path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <span data-i18n="home.hero_btn_play">How Fath Play Works</span>
+          </a>
         </div>
-    </div>
 
+        <!-- Measurable Indicators -->
+        <dl class="mt-12 grid max-w-lg grid-cols-3 gap-3.5">
+          <div class="card p-4 text-center">
+            <dt data-i18n="home.stat_tracks" class="text-xs font-medium text-slate-400">Knowledge Tracks</dt>
+            <dd class="mt-1 font-display text-2xl font-bold text-[#0F172A]">5</dd>
+          </div>
+          <div class="card p-4 text-center">
+            <dt data-i18n="home.stat_games" class="text-xs font-medium text-slate-400">Games in the Box</dt>
+            <dd class="mt-1 font-display text-2xl font-bold text-[#159A85]">100</dd>
+          </div>
+          <div class="card p-4 text-center">
+            <dt data-i18n="home.stat_data" class="text-xs font-medium text-slate-400">Recorded Data</dt>
+            <dd class="mt-1 font-display text-2xl font-bold text-[#192A45]">0%</dd>
+          </div>
+        </dl>
+      </div>
+
+      <!-- Hero Visual -->
+      <div class="reveal relative lg:col-span-5">
+        <div class="relative mx-auto w-full max-w-md">
+          <div
+            class="absolute -inset-4 rounded-3xl bg-gradient-to-tr from-[#159A85]/20 via-[#38B2AC]/10 to-[#CADAFE]/30 blur-2xl">
+          </div>
+
+          <div class="relative rounded-3xl border border-[#E2E8F0] bg-white p-8 shadow-xl level-2">
+            <div
+              class="aspect-square w-full rounded-2xl bg-gradient-to-br from-[#192A45] to-[#0E1726] p-8 shadow-inner flex items-center justify-center">
+              <span class="logo-crop h-48 w-48"><img src="assets/fath-logo-white.png" alt="FATH logo" /></span>
+            </div>
+
+            <!-- Floating Fact Cards -->
+            <div
+              class="absolute -right-4 -bottom-4 rounded-xl border border-[#E2E8F0] bg-white px-4 py-3 shadow-lg level-2 flex items-center gap-3">
+              <span class="grid h-10 w-10 place-items-center rounded-lg bg-[#F0FDF9] text-[#159A85]">
+                <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                </svg>
+              </span>
+              <div>
+                <div data-i18n="home.float_motion" class="text-xs font-semibold text-slate-400">Motion Tracking</div>
+                <div data-i18n="home.float_motion_sub" class="text-sm font-bold text-[#0F172A]">100% On-device processing</div>
+              </div>
+            </div>
+
+            <div
+              class="absolute -left-4 -top-4 rounded-xl border border-[#E2E8F0] bg-white px-4 py-3 shadow-lg level-2 flex items-center gap-3">
+              <span class="grid h-10 w-10 place-items-center rounded-lg bg-[#FFFBEB] text-[#D97706]">
+                <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                </svg>
+              </span>
+              <div>
+                <div data-i18n="home.float_fair" class="text-xs font-semibold text-slate-400">Live Tournaments</div>
+                <div data-i18n="home.float_fair_sub" class="text-sm font-bold text-[#0F172A]">Fair electronic refereeing</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== VISION & MISSION ===== -->
+  <section id="vision" class="py-20 bg-white scroll-mt-20 border-b border-[#E2E8F0]">
+    <div id="about"></div>
+    <div class="mx-auto max-w-7xl px-4 sm:px-6">
+      <!-- Section Header & Brand Definition -->
+      <div class="reveal mx-auto max-w-3xl text-center">
+        <span data-i18n="home.vision_chip" class="chip chip-teal">Vision & Mission</span>
+        <h2 data-i18n="home.vision_title" class="mt-4 font-display text-3xl font-bold text-[#0F172A] sm:text-4xl">
+          FATH: A Name Signifying Distinction
+        </h2>
+        <p data-i18n="home.vision_desc" class="mt-6 text-lg leading-relaxed text-slate-600">
+          In Arabic, "Al-Fath" denotes the unique, distinguished individual without equal. From this root, the FATH initiative was born: an umbrella uniting edutainment projects to discover and nurture talent, transforming passive screen time into active learning, physical agility, and fair competition. We engineer our platforms in Arabic from day one, not as an afterthought or mere translation of foreign media.
+        </p>
+      </div>
+
+      <!-- Vision & Mission Side-by-Side Cards -->
+      <div class="mt-14 grid gap-8 lg:grid-cols-2">
+        <!-- Vision Card -->
+        <div class="reveal card p-8 sm:p-10 border-slate-200 bg-gradient-to-b from-[#F0FDF9]/50 to-white flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between">
+              <span data-i18n="home.vision_card_chip" class="chip chip-teal">Long-term Aspiration</span>
+              <div class="grid h-12 w-12 place-items-center rounded-xl bg-[#F0FDF9] text-[#159A85] border border-[#CCFBF1]">
+                <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                </svg>
+              </div>
+            </div>
+
+            <h3 data-i18n="home.vision_card_title" class="mt-6 font-display text-2xl font-bold text-[#0F172A]">
+              Our Vision
+            </h3>
+
+            <p data-i18n="home.vision_card_desc" class="mt-4 leading-relaxed text-slate-600">
+              To establish FATH as the premier Arab platform for play-based and competition-driven learning, actively shaping a confident generation: sharp in intellect, physically agile, and proud of their cultural identity and Arabic language.
+            </p>
+          </div>
+
+          <div class="mt-8 pt-6 border-t border-[#E2E8F0] space-y-2.5">
+            <div class="flex items-center gap-3 text-xs font-semibold text-slate-700">
+              <span class="h-2 w-2 rounded-full bg-[#159A85]"></span>
+              <span data-i18n="home.vision_p1">Sharp intellect and quick wit under competitive time pressure</span>
+            </div>
+            <div class="flex items-center gap-3 text-xs font-semibold text-slate-700">
+              <span class="h-2 w-2 rounded-full bg-[#159A85]"></span>
+              <span data-i18n="home.vision_p2">Physical agility and fitness through camera-tracked motion gaming</span>
+            </div>
+            <div class="flex items-center gap-3 text-xs font-semibold text-slate-700">
+              <span class="h-2 w-2 rounded-full bg-[#159A85]"></span>
+              <span data-i18n="home.vision_p3">Deep pride in Arabic language and authentic cultural identity</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mission Card -->
+        <div class="reveal card p-8 sm:p-10 border-slate-200 bg-gradient-to-b from-[#FFFBEB]/40 to-white flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between">
+              <span data-i18n="home.mission_card_chip" class="chip chip-gold">Practical Execution</span>
+              <div class="grid h-12 w-12 place-items-center rounded-xl bg-[#FFFBEB] text-[#D97706] border border-[#FDE68A]">
+                <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 2v4m0 12v4M2 12h4m12 0h4" />
+                  <circle cx="12" cy="12" r="7" />
+                  <circle cx="12" cy="12" r="3" />
+                </svg>
+              </div>
+            </div>
+
+            <h3 data-i18n="home.mission_card_title" class="mt-6 font-display text-2xl font-bold text-[#0F172A]">
+              Our Mission
+            </h3>
+
+            <p data-i18n="home.mission_card_desc" class="mt-4 leading-relaxed text-slate-600">
+              We design interactive edutainment experiences, from live on-stage competition buzzers to camera-tracked living room motion games. Our ecosystem combines knowledge, movement, and honorable competition, delivering authentic Arabic content at an accessible price point for every family, with child privacy and safety built in by design.
+            </p>
+          </div>
+
+          <div class="mt-8 pt-6 border-t border-[#E2E8F0] space-y-2.5">
+            <div class="flex items-center gap-3 text-xs font-semibold text-slate-700">
+              <span class="h-2 w-2 rounded-full bg-[#D97706]"></span>
+              <span data-i18n="home.mission_p1">Accessible pricing with full game ownership and no mandatory subscriptions</span>
+            </div>
+            <div class="flex items-center gap-3 text-xs font-semibold text-slate-700">
+              <span class="h-2 w-2 rounded-full bg-[#D97706]"></span>
+              <span data-i18n="home.mission_p2">100% on-device camera privacy with zero cloud streaming or recording</span>
+            </div>
+            <div class="flex items-center gap-3 text-xs font-semibold text-slate-700">
+              <span class="h-2 w-2 rounded-full bg-[#D97706]"></span>
+              <span data-i18n="home.mission_p3">Balanced screen time where entertainment is earned through educational goals</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CORE PRODUCTS ===== -->
+  <section id="projects" class="py-20 bg-[#F8FAFC] border-y border-[#E2E8F0]">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6">
+      <div class="reveal text-center">
+        <span data-i18n="home.products_chip" class="chip chip-neutral">Core Products</span>
+        <h2 data-i18n="home.products_title" class="mt-3 font-display text-3xl font-bold text-[#0F172A] sm:text-4xl">Two Complementary Projects</h2>
+      </div>
+
+      <div class="mt-14 grid gap-8 lg:grid-cols-2">
+        <!-- Competitions Card -->
+        <article class="reveal card card-hover p-8 sm:p-10 flex flex-col justify-between border-slate-200">
+          <div>
+            <div class="flex items-center justify-between">
+              <span data-i18n="home.comp_badge" class="chip chip-gold">Live Interactive Contests</span>
+              <span data-i18n="home.comp_scope" class="text-xs text-slate-400 font-medium">On-stage and Digital</span>
+            </div>
+
+            <div class="mt-6 flex items-center gap-4">
+              <div
+                class="grid h-14 w-14 place-items-center rounded-xl bg-[#FFFBEB] text-[#D97706] border border-[#FDE68A]">
+                <svg class="h-7 w-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                </svg>
+              </div>
+              <div>
+                <h3 data-i18n="home.comp_title" class="font-display text-2xl font-bold text-[#0F172A]">Fath Competitions</h3>
+                <p class="text-sm font-medium text-slate-400">Fath Competitions</p>
+              </div>
+            </div>
+
+            <p data-i18n="home.comp_desc" class="mt-6 leading-relaxed text-slate-600">
+              A school tournament program with specialized electronic response buttons. Two contestants face each other across four rounds that test speed, risk management, and genuine knowledge under time pressure.
+            </p>
+
+            <div class="mt-6 grid grid-cols-2 gap-2.5 text-xs font-semibold text-slate-700">
+              <span class="rounded-lg bg-white border border-[#E2E8F0] px-3.5 py-2.5 flex items-center gap-2">
+                <span class="h-1.5 w-1.5 rounded-full bg-[#159A85]"></span>
+                <span data-i18n="home.comp_r1">Fastest Round (10 seconds)</span>
+              </span>
+              <span class="rounded-lg bg-white border border-[#E2E8F0] px-3.5 py-2.5 flex items-center gap-2">
+                <span class="h-1.5 w-1.5 rounded-full bg-[#159A85]"></span>
+                <span data-i18n="home.comp_r2">Evaluation & Risk Round</span>
+              </span>
+              <span class="rounded-lg bg-white border border-[#E2E8F0] px-3.5 py-2.5 flex items-center gap-2">
+                <span class="h-1.5 w-1.5 rounded-full bg-[#159A85]"></span>
+                <span data-i18n="home.comp_r3">Cumulative Tug-of-War</span>
+              </span>
+              <span class="rounded-lg bg-white border border-[#E2E8F0] px-3.5 py-2.5 flex items-center gap-2">
+                <span class="h-1.5 w-1.5 rounded-full bg-[#159A85]"></span>
+                <span data-i18n="home.comp_r4">Decisive Treasure Round</span>
+              </span>
+            </div>
+          </div>
+
+          <div class="mt-8 pt-6 border-t border-[#E2E8F0] flex items-center justify-between">
+            <a href="competitions.html"
+              class="inline-flex items-center gap-2 font-semibold text-[#159A85] hover:text-[#0F766E] transition">
+              <span data-i18n="home.comp_link">Tournament schedule & rules</span>
+              <svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19 12H5m7 7-7-7 7-7" />
+              </svg>
+            </a>
+            <a href="https://register.fath-app.com/" target="_blank" rel="noopener"
+              data-i18n="home.comp_cta"
+              class="btn btn-primary text-xs py-2 px-4">
+              Register Contestant
+            </a>
+          </div>
+        </article>
+
+        <!-- Play Card -->
+        <article class="reveal card card-hover p-8 sm:p-10 flex flex-col justify-between border-slate-200">
+          <div>
+            <div class="flex items-center justify-between">
+              <span data-i18n="home.play_badge" class="chip chip-teal">Home Hardware & Games</span>
+              <span data-i18n="home.play_scope" class="text-xs text-slate-400 font-medium">Living Room TV</span>
+            </div>
+
+            <div class="mt-6 flex items-center gap-4">
+              <div
+                class="grid h-14 w-14 place-items-center rounded-xl bg-[#F0FDF9] text-[#159A85] border border-[#CCFBF1]">
+                <svg class="h-7 w-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+              </div>
+              <div>
+                <h3 data-i18n="home.play_title" class="font-display text-2xl font-bold text-[#0F172A]">Fath Play</h3>
+                <p class="text-sm font-medium text-slate-400">Fath Play</p>
+              </div>
+            </div>
+
+            <p data-i18n="home.play_desc" class="mt-6 leading-relaxed text-slate-600">
+              A compact Android TV device connected via HDMI with a dedicated motion sensor camera. It captures jumps, arm swings, and body leans to navigate gameplay directly, with no wearables and no gamepads.
+            </p>
+
+            <div class="mt-6 grid grid-cols-2 gap-2.5 text-xs font-semibold text-slate-700">
+              <span class="rounded-lg bg-white border border-[#E2E8F0] px-3.5 py-2.5 flex items-center gap-2">
+                <span class="h-1.5 w-1.5 rounded-full bg-[#159A85]"></span>
+                <span data-i18n="home.play_f1">Dedicated Fath Box ($45)</span>
+              </span>
+              <span class="rounded-lg bg-white border border-[#E2E8F0] px-3.5 py-2.5 flex items-center gap-2">
+                <span class="h-1.5 w-1.5 rounded-full bg-[#159A85]"></span>
+                <span data-i18n="home.play_f2">Permanent ownership, no mandatory sub</span>
+              </span>
+              <span class="rounded-lg bg-white border border-[#E2E8F0] px-3.5 py-2.5 flex items-center gap-2">
+                <span class="h-1.5 w-1.5 rounded-full bg-[#159A85]"></span>
+                <span data-i18n="home.play_f3">Complete offline functionality</span>
+              </span>
+              <span class="rounded-lg bg-white border border-[#E2E8F0] px-3.5 py-2.5 flex items-center gap-2">
+                <span class="h-1.5 w-1.5 rounded-full bg-[#159A85]"></span>
+                <span data-i18n="home.play_f4">Companion app for time management</span>
+              </span>
+            </div>
+          </div>
+
+          <div class="mt-8 pt-6 border-t border-[#E2E8F0] flex items-center justify-between">
+            <a href="play.html"
+              class="inline-flex items-center gap-2 font-semibold text-[#159A85] hover:text-[#0F766E] transition">
+              <span data-i18n="home.play_link">Console specs & game list</span>
+              <svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19 12H5m7 7-7-7 7-7" />
+              </svg>
+            </a>
+            <a href="store.html" data-i18n="home.play_cta" class="btn btn-secondary text-xs py-2 px-4">
+              Order Console
+            </a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PRIVACY & SAFETY ===== -->
+  <section class="py-20 bg-white">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6">
+      <div class="reveal card card-accent-strip p-8 sm:p-12">
+        <div class="max-w-3xl">
+          <span data-i18n="home.privacy_chip" class="chip chip-teal">Safety & Controls</span>
+          <h2 data-i18n="home.privacy_title" class="mt-4 font-display text-3xl font-bold text-[#0F172A]">
+            Protecting Home Privacy with Local Processing
+          </h2>
+          <p data-i18n="home.privacy_desc" class="mt-4 text-base leading-relaxed text-slate-600">
+            Fath Play processes motion coordinates inside the onboard chip directly, without uploading camera footage to cloud servers:
+          </p>
+        </div>
+
+        <div class="mt-10 grid gap-6 sm:grid-cols-3">
+          <div class="rounded-xl bg-[#F8FAFC] border border-[#E2E8F0] p-6">
+            <div class="grid h-11 w-11 place-items-center rounded-lg bg-[#F0FDF9] text-[#159A85]">
+              <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636" />
+              </svg>
+            </div>
+            <h4 data-i18n="home.priv_c1_title" class="mt-4 font-display font-bold text-[#0F172A]">100% Local Processing</h4>
+            <p data-i18n="home.priv_c1_desc" class="mt-2 text-xs leading-relaxed text-slate-500">
+              Camera video is never transmitted to external servers or saved to internal disk; skeletal coordinates are processed in RAM and discarded instantly.
+            </p>
+          </div>
+
+          <div class="rounded-xl bg-[#F8FAFC] border border-[#E2E8F0] p-6">
+            <div class="grid h-11 w-11 place-items-center rounded-lg bg-[#F0FDF9] text-[#159A85]">
+              <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+              </svg>
+            </div>
+            <h4 data-i18n="home.priv_c2_title" class="mt-4 font-display font-bold text-[#0F172A]">Physical Lens Cover</h4>
+            <p data-i18n="home.priv_c2_desc" class="mt-2 text-xs leading-relaxed text-slate-500">
+              A sliding mechanical privacy shutter covers the camera lens when not in use for complete peace of mind.
+            </p>
+          </div>
+
+          <div class="rounded-xl bg-[#F8FAFC] border border-[#E2E8F0] p-6">
+            <div class="grid h-11 w-11 place-items-center rounded-lg bg-[#F0FDF9] text-[#159A85]">
+              <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <h4 data-i18n="home.priv_c3_title" class="mt-4 font-display font-bold text-[#0F172A]">Parental Time Management</h4>
+            <p data-i18n="home.priv_c3_desc" class="mt-2 text-xs leading-relaxed text-slate-500">
+              Set daily screen time limits, lock games with one tap, and require 20 minutes of educational games before unlocking entertainment.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ECOSYSTEM AUDIENCE ===== -->
+  <section class="py-20 bg-[#F8FAFC] border-y border-[#E2E8F0]">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6">
+      <div class="reveal text-center">
+        <span data-i18n="home.eco_chip" class="chip chip-navy">Integrated Ecosystem</span>
+        <h2 data-i18n="home.eco_title" class="mt-3 font-display text-3xl font-bold text-[#0F172A]">A Dedicated Space for Everyone</h2>
+      </div>
+
+      <div class="mt-12 grid gap-6 md:grid-cols-3">
+        <div class="card p-7">
+          <div class="grid h-10 w-10 place-items-center rounded-lg bg-[#F8FAFC] border border-[#E2E8F0] text-[#159A85]">
+            <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+            </svg>
+          </div>
+          <h4 data-i18n="home.aud_fam_title" class="mt-4 font-display font-bold text-[#0F172A] text-lg">For Families & Children</h4>
+          <p data-i18n="home.aud_fam_desc" class="mt-2 text-sm leading-relaxed text-slate-500">Safe hardware and culturally aligned content that gets kids active indoors at an affordable price with lifetime ownership.</p>
+        </div>
+
+        <div class="card p-7">
+          <div class="grid h-10 w-10 place-items-center rounded-lg bg-[#F8FAFC] border border-[#E2E8F0] text-[#159A85]">
+            <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+            </svg>
+          </div>
+          <h4 data-i18n="home.aud_sch_title" class="mt-4 font-display font-bold text-[#0F172A] text-lg">For Schools & Institutions</h4>
+          <p data-i18n="home.aud_sch_desc" class="mt-2 text-sm leading-relaxed text-slate-500">Organize internal tournaments with certified electronic judging that spotlights talented students on a true competitive stage.</p>
+        </div>
+
+        <div class="card p-7">
+          <div class="grid h-10 w-10 place-items-center rounded-lg bg-[#F8FAFC] border border-[#E2E8F0] text-[#159A85]">
+            <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+            </svg>
+          </div>
+          <h4 data-i18n="home.aud_dev_title" class="mt-4 font-display font-bold text-[#0F172A] text-lg">For Game Studios (Fath Hub)</h4>
+          <p data-i18n="home.aud_dev_desc" class="mt-2 text-sm leading-relaxed text-slate-500">A Unity SDK allowing developers to bind bodily movement to gameplay without building computer vision algorithms from scratch.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TIMELINE ===== -->
+  <section class="py-20 bg-white">
+    <div class="mx-auto max-w-4xl px-4 sm:px-6">
+      <div class="reveal text-center">
+        <span data-i18n="home.timeline_chip" class="chip chip-neutral">Rollout Roadmap</span>
+        <h2 data-i18n="home.timeline_title" class="mt-3 font-display text-3xl font-bold text-[#0F172A] sm:text-4xl">Launch & Availability Plan</h2>
+      </div>
+
+      <ol class="relative mt-14 space-y-8 border-l-2 rtl:border-l-0 rtl:border-r-2 border-[#CBD5E1] pl-8 rtl:pl-0 rtl:pr-8">
+        <li class="reveal relative">
+          <span
+            class="absolute -left-[41px] rtl:left-auto rtl:-right-[41px] top-1.5 h-5 w-5 rounded-full border-4 border-white bg-[#159A85] shadow-sm"></span>
+          <span data-i18n="home.step1_chip" class="chip chip-teal text-[11px] py-0.5">Current Phase</span>
+          <h4 data-i18n="home.step1_title" class="mt-2 text-lg font-bold text-[#0F172A]">Live Field Tournaments & Console Pilot</h4>
+          <p data-i18n="home.step1_desc" class="mt-1 text-sm leading-relaxed text-slate-500">Group qualifying rounds commence, with Fath Play hardware rolled out containing the initial 100-game bundle.</p>
+        </li>
+
+        <li class="reveal relative">
+          <span
+            class="absolute -left-[41px] rtl:left-auto rtl:-right-[41px] top-1.5 h-5 w-5 rounded-full border-4 border-white bg-[#192A45] shadow-sm"></span>
+          <span data-i18n="home.step2_chip" class="chip chip-navy text-[11px] py-0.5">Next Phase</span>
+          <h4 data-i18n="home.step2_title" class="mt-2 text-lg font-bold text-[#0F172A]">Parents App & Family Multiplayer Rooms</h4>
+          <p data-i18n="home.step2_desc" class="mt-1 text-sm leading-relaxed text-slate-500">Official release of Fath Parents on app stores, activating remote multiplayer matches between families.</p>
+        </li>
+
+        <li class="reveal relative">
+          <span
+            class="absolute -left-[41px] rtl:left-auto rtl:-right-[41px] top-1.5 h-5 w-5 rounded-full border-4 border-white bg-slate-400 shadow-sm"></span>
+          <span data-i18n="home.step3_chip" class="chip chip-neutral text-[11px] py-0.5">Future Phase</span>
+          <h4 data-i18n="home.step3_title" class="mt-2 text-lg font-bold text-[#0F172A]">Opening Fath Store to Independent Studios</h4>
+          <p data-i18n="home.step3_desc" class="mt-1 text-sm leading-relaxed text-slate-500">Publishing new active and educational games from indie developers and studios via Fath Hub.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ===== CTA SECTION ===== -->
+  <section id="contact" class="py-20 bg-[#F8FAFC] border-t border-[#E2E8F0] scroll-mt-20">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6">
+      <div
+        class="reveal relative overflow-hidden rounded-3xl bg-[#192A45] p-10 text-center text-white sm:p-16 shadow-xl level-3">
+        <div class="relative">
+          <h2 data-i18n="home.cta_title" class="font-display text-3xl font-bold sm:text-4xl text-white">Want to compete or test the platform?</h2>
+          <p data-i18n="home.cta_desc" class="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-slate-200">
+            Student registration is open for upcoming seasons, and advance orders are available for Fath Play consoles with the full game pack.
+          </p>
+
+          <div class="mt-8 flex flex-wrap justify-center gap-3.5">
+            <a href="https://register.fath-app.com/" target="_blank" rel="noopener"
+              class="btn btn-primary px-7 py-3 font-semibold shadow-md flex items-center gap-2">
+              <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z" />
+              </svg>
+              <span data-i18n="home.cta_reg">Register New Contestant</span>
+            </a>
+            <a href="store.html"
+              class="btn bg-white/10 text-white hover:bg-white/20 px-7 py-3 border border-white/20 flex items-center gap-2">
+              <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+              </svg>
+              <span data-i18n="home.cta_order">Order Fath Play Console</span>
+            </a>
+            <a href="hub.html"
+              class="btn bg-white/10 text-white hover:bg-white/20 px-7 py-3 border border-white/20 flex items-center gap-2">
+              <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+              </svg>
+              <span data-i18n="home.cta_dev">Join as Developer</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="site-footer"></div>
+  <script src="assets/layout.js"></script>
 </body>
 
 </html>

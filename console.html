@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title data-i18n="console.meta_title">Fath Console: Hardware & Technical Specifications</title>
+  <meta name="description" data-i18n="console.meta_desc" content="Specifications of Fath Home Console: Android TV hardware, wide-angle motion camera, and 100 lifetime games." />
+  <link rel="icon" href="assets/fath-logo-white.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="assets/tw-config.js"></script>
+  <script src="assets/i18n.js"></script>
+  <link rel="stylesheet" href="assets/site.css" />
+</head>
+<body data-page="console" class="bg-white text-slate-600 antialiased selection:bg-[#CCFBF1] selection:text-[#0F766E]">
+  <div id="site-header"></div>
+
+  <!-- ===== HERO ===== -->
+  <section class="relative overflow-hidden border-b border-[#E2E8F0] bg-gradient-to-b from-[#F8FAFC] to-white pb-20 pt-12 sm:pt-16">
+    <div class="bg-subtle-grid absolute inset-0 pointer-events-none"></div>
+
+    <div class="relative mx-auto max-w-7xl px-4 text-center sm:px-6">
+      <nav class="flex justify-center items-center gap-2 text-xs font-semibold text-slate-400">
+        <a href="play.html" data-i18n="nav.play" class="hover:text-[#159A85] transition">Fath Play</a>
+        <span>/</span>
+        <span data-i18n="nav.console" class="text-[#0F172A]">Fath Console</span>
+      </nav>
+
+      <h1 data-i18n-html="console.hero_title" class="reveal mt-6 font-display text-4xl font-bold text-[#0F172A] sm:text-6xl">
+        Fath <span class="text-gradient-teal">Home Console</span>
+      </h1>
+
+      <p data-i18n="console.hero_desc" class="reveal mx-auto mt-5 max-w-2xl text-lg leading-relaxed text-slate-600">
+        A compact unit that plugs into any TV via HDMI to turn it into an active motion console. Fath Play comes pre-installed, and the motion camera works the moment it is plugged in, with 100 games you own forever.
+      </p>
+
+      <!-- Hardware Representation -->
+      <div class="reveal relative mx-auto mt-12 max-w-md">
+        <div class="absolute inset-4 rounded-3xl bg-gradient-to-tr from-[#159A85]/20 to-[#CADAFE]/30 blur-2xl"></div>
+        <div class="animate-float relative mx-auto h-44 w-80 rounded-3xl border border-[#E2E8F0] bg-gradient-to-br from-[#192A45] to-[#0E1726] p-6 shadow-xl level-2 flex flex-col items-center justify-center gap-4">
+          <span class="logo-crop h-14 w-14"><img src="assets/fath-logo-white.png" alt="FATH logo" /></span>
+          <div class="flex items-center gap-2">
+            <span class="h-2 w-2 rounded-full bg-[#10B981]"></span>
+            <span class="text-xs font-mono tracking-wider text-slate-300">FATH CONSOLE · MODEL 1</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal mt-12 flex flex-wrap justify-center gap-3.5">
+        <a href="store.html#devices" class="btn btn-primary px-8 py-3.5 text-base font-semibold shadow-sm flex items-center gap-2">
+          <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>
+          <span data-i18n="console.btn_order">Order Console ($45)</span>
+        </a>
+        <a href="#specs" data-i18n="console.btn_specs" class="btn btn-outline px-8 py-3.5 text-base">
+          Hardware Specs Table
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== VIDEO SHOWCASE ===== -->
+  <section class="py-16 bg-[#F8FAFC] border-b border-[#E2E8F0]">
+    <div class="mx-auto max-w-5xl px-4 sm:px-6">
+      <div class="reveal text-center">
+        <span data-i18n="console.video_chip" class="chip chip-teal">Usage Demonstration</span>
+        <h2 data-i18n="console.video_title" class="mt-3 font-display text-3xl font-bold text-[#0F172A] sm:text-4xl">Watch Fath Console in Action</h2>
+        <p data-i18n="console.video_desc" class="mt-2 text-slate-500">Instantaneous response to body jumps and arm movements directly in front of the TV without delay or handheld controllers.</p>
+      </div>
+
+      <div class="reveal mt-10 overflow-hidden rounded-3xl border-4 border-[#192A45] bg-[#0E1726] shadow-2xl level-3">
+        <div class="relative aspect-video w-full bg-black">
+          <video controls autoplay loop muted playsinline class="h-full w-full object-cover">
+            <source src="assets/fath-play.mp4" type="video/mp4" />
+          </video>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== IN THE BOX ===== -->
+  <section class="py-16 bg-white">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6">
+      <div class="reveal text-center">
+        <span data-i18n="console.box_chip" class="chip chip-neutral">Box Contents</span>
+        <h2 data-i18n="console.box_title" class="mt-3 font-display text-3xl font-bold text-[#0F172A]">What Comes in the Box?</h2>
+      </div>
+
+      <div class="mt-12 grid grid-cols-2 gap-5 lg:grid-cols-4">
+        <div class="reveal card p-6 text-center">
+          <div class="grid h-12 w-12 mx-auto place-items-center rounded-xl bg-[#F8FAFC] text-[#159A85] border border-[#E2E8F0]">
+            <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/></svg>
+          </div>
+          <p data-i18n="console.box_1_title" class="mt-4 font-display font-bold text-[#0F172A]">Android TV Console</p>
+          <p data-i18n="console.box_1_desc" class="mt-1 text-xs text-slate-400">Pre-loaded with Fath Play OS</p>
+        </div>
+
+        <div class="reveal card p-6 text-center">
+          <div class="grid h-12 w-12 mx-auto place-items-center rounded-xl bg-[#F8FAFC] text-[#159A85] border border-[#E2E8F0]">
+            <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+          </div>
+          <p data-i18n="console.box_2_title" class="mt-4 font-display font-bold text-[#0F172A]">USB Motion Camera</p>
+          <p data-i18n="console.box_2_desc" class="mt-1 text-xs text-slate-400">With integrated physical privacy cover</p>
+        </div>
+
+        <div class="reveal card p-6 text-center">
+          <div class="grid h-12 w-12 mx-auto place-items-center rounded-xl bg-[#F8FAFC] text-[#159A85] border border-[#E2E8F0]">
+            <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+          </div>
+          <p data-i18n="console.box_3_title" class="mt-4 font-display font-bold text-[#0F172A]">HDMI Cable & Power Adapter</p>
+          <p data-i18n="console.box_3_desc" class="mt-1 text-xs text-slate-400">Ready for instant TV setup</p>
+        </div>
+
+        <div class="reveal card p-6 text-center border-[#CCFBF1] bg-[#F0FDF9]">
+          <div class="grid h-12 w-12 mx-auto place-items-center rounded-xl bg-[#159A85] text-white">
+            <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg>
+          </div>
+          <p data-i18n="console.box_4_title" class="mt-4 font-display font-bold text-[#0F766E]">100 Complete Games Pack</p>
+          <p data-i18n="console.box_4_desc" class="mt-1 text-xs text-[#0F766E]">Permanent ownership included in console price</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SPECS ===== -->
+  <section id="specs" class="py-16 bg-[#F8FAFC] border-y border-[#E2E8F0]">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6">
+      <div class="grid gap-8 lg:grid-cols-5">
+        <div class="reveal card p-8 lg:col-span-3">
+          <span data-i18n="console.specs_chip" class="chip chip-teal">Technical Details</span>
+          <h2 data-i18n="console.specs_title" class="mt-3 font-display text-2xl font-bold text-[#0F172A]">Fath Box 1 Technical Specifications</h2>
+          <dl class="mt-6 divide-y divide-[#E2E8F0] text-sm">
+            <div class="flex justify-between py-3.5"><dt data-i18n="console.spec_os" class="text-slate-500">Operating System</dt><dd class="font-bold text-[#0F172A]" dir="ltr">Android 14 (TV Edition)</dd></div>
+            <div class="flex justify-between py-3.5"><dt data-i18n="console.spec_cpu" class="text-slate-500">CPU Processor</dt><dd class="font-bold text-[#0F172A]" dir="ltr">Amlogic S905X5M (Quad-core Cortex-A55)</dd></div>
+            <div class="flex justify-between py-3.5"><dt data-i18n="console.spec_gpu" class="text-slate-500">Resolution & Graphics</dt><dd class="font-bold text-[#0F172A]" dir="ltr">4K @ 60fps · AV1 Hardware Decoding</dd></div>
+            <div class="flex justify-between py-3.5"><dt data-i18n="console.spec_net" class="text-slate-500">Connectivity</dt><dd class="font-bold text-[#0F172A]" dir="ltr">Dual-Band Wi-Fi 5 / Ethernet RJ45</dd></div>
+            <div class="flex justify-between py-3.5"><dt data-i18n="console.spec_cam" class="text-slate-500">Camera & Sensor</dt><dd data-i18n="console.spec_cam_val" class="font-bold text-[#159A85]">Wide-angle sensor with 100% on-device vision</dd></div>
+          </dl>
+        </div>
+
+        <div class="reveal card p-8 lg:col-span-2 flex flex-col justify-between">
+          <div>
+            <span data-i18n="console.fut_chip" class="chip chip-navy">Future Roadmap</span>
+            <h3 data-i18n="console.fut_title" class="mt-3 font-display text-xl font-bold text-[#0F172A]">Upcoming Supported Platforms</h3>
+            <p data-i18n="console.fut_desc" class="mt-3 text-sm leading-relaxed text-slate-500">
+              Alongside the dedicated Fath Console, we are engineering support for standard webcams on:
+            </p>
+            <ul class="mt-5 space-y-2.5 text-sm text-slate-700">
+              <li class="flex items-center gap-2">
+                <svg class="h-4 w-4 text-[#159A85]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                <span data-i18n="console.fut_1">PC & Mac Desktops (Windows & macOS)</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <svg class="h-4 w-4 text-[#159A85]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                <span data-i18n="console.fut_2">Apple TV Hardware</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <svg class="h-4 w-4 text-[#159A85]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                <span data-i18n="console.fut_3">Smart TVs running Google TV</span>
+              </li>
+            </ul>
+          </div>
+          <div class="mt-8 pt-5 border-t border-[#E2E8F0]">
+            <a href="store.html#devices" data-i18n="console.fut_btn" class="btn btn-primary w-full text-center py-2.5">Go to Store to Order</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PRIVACY ARCHITECTURE ===== -->
+  <section class="py-16 bg-white">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6">
+      <div class="reveal card card-accent-strip p-8 sm:p-12">
+        <h3 data-i18n="console.priv_title" class="font-display text-2xl font-bold text-[#0F172A]">Three Engineering Privacy Guarantees</h3>
+        <p data-i18n="console.priv_desc" class="mt-2 text-slate-600 leading-relaxed">
+          We decoupled camera functionality from cloud and network layers to ensure children privacy at home:
+        </p>
+        <div class="mt-8 grid gap-6 md:grid-cols-3">
+          <div class="rounded-xl bg-[#F8FAFC] border border-[#E2E8F0] p-5">
+            <h4 class="font-bold text-[#0F172A] flex items-center gap-2">
+              <svg class="h-5 w-5 text-[#159A85]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636"/></svg>
+              <span data-i18n="console.p1_t">Zero Cloud Video Sync</span>
+            </h4>
+            <p data-i18n="console.p1_d" class="mt-2 text-xs text-slate-500 leading-relaxed">Camera feeds connect to a local neural pipeline that calculates joints and discards the visual frame instantly.</p>
+          </div>
+
+          <div class="rounded-xl bg-[#F8FAFC] border border-[#E2E8F0] p-5">
+            <h4 class="font-bold text-[#0F172A] flex items-center gap-2">
+              <svg class="h-5 w-5 text-[#159A85]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+              <span data-i18n="console.p2_t">Physical Lens Shutter</span>
+            </h4>
+            <p data-i18n="console.p2_d" class="mt-2 text-xs text-slate-500 leading-relaxed">An included manual sliding shutter mechanically blocks the lens when games are turned off.</p>
+          </div>
+
+          <div class="rounded-xl bg-[#F8FAFC] border border-[#E2E8F0] p-5">
+            <h4 class="font-bold text-[#0F172A] flex items-center gap-2">
+              <svg class="h-5 w-5 text-[#159A85]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+              <span data-i18n="console.p3_t">Complete Offline Play</span>
+            </h4>
+            <p data-i18n="console.p3_d" class="mt-2 text-xs text-slate-500 leading-relaxed">All bundled games run entirely without internet connection, ensuring children are not exposed to unmonitored online networks.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="site-footer"></div>
+  <script src="assets/layout.js"></script>
+</body>
+</html>
