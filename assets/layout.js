@@ -233,6 +233,47 @@
   // Re-render when language changes
   window.addEventListener('languageChanged', renderLayout);
 
+  // Smooth hash navigation & cross-page anchor handling
+  function handleHashScroll() {
+    if (window.location.hash) {
+      const target = document.querySelector(window.location.hash);
+      if (target) {
+        setTimeout(() => {
+          target.scrollIntoView({ behavior: 'smooth' });
+        }, 120);
+      }
+    }
+  }
+
+  window.addEventListener('DOMContentLoaded', handleHashScroll);
+  window.addEventListener('load', handleHashScroll);
+  window.addEventListener('hashchange', handleHashScroll);
+
+  // In-page smooth scroll interceptor for hash links on the same page
+  document.addEventListener('click', (e) => {
+    const a = e.target.closest('a');
+    if (!a) return;
+    const href = a.getAttribute('href');
+    if (!href) return;
+
+    if (href.startsWith('#')) {
+      const target = document.querySelector(href);
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth' });
+        history.pushState(null, '', href);
+      }
+    } else if (href.startsWith('index.html#') && page === 'home') {
+      const hash = href.replace('index.html', '');
+      const target = document.querySelector(hash);
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth' });
+        history.pushState(null, '', hash);
+      }
+    }
+  });
+
   // Scroll reveal observer
   const io = new IntersectionObserver((entries) => {
     entries.forEach((e) => {
